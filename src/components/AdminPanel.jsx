@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, Save, Upload, Download, Plus, CheckCircle, AlertTriangle, Shield, Github, RefreshCw, Key, HelpCircle, Trash2 } from 'lucide-react';
+import { Settings, Save, Upload, Download, Plus, CheckCircle, AlertTriangle, Shield, GitBranch, RefreshCw, Key, HelpCircle, Trash2 } from 'lucide-react';
 import { commitCompetitorsToGitHub, triggerGitHubSyncWorkflow } from '../services/githubService';
 import { saveSettings } from '../services/dataService';
 
@@ -181,7 +181,7 @@ export default function AdminPanel({ competitors, setCompetitors, settings, setS
             disabled={loadingGitHub}
             className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 text-xs font-black flex items-center gap-2 shadow-lg shadow-emerald-500/25 transition-all"
           >
-            <Github className="w-4 h-4" />
+            <GitBranch className="w-4 h-4" />
             <span>{loadingGitHub ? 'Publicando...' : 'Publicar no GitHub (Deploy Oficial)'}</span>
           </button>
         </div>
@@ -207,7 +207,7 @@ export default function AdminPanel({ competitors, setCompetitors, settings, setS
             activeSubTab === 'settings' ? 'border-cyan-400 text-cyan-400' : 'border-transparent text-slate-400 hover:text-slate-200'
           }`}
         >
-          <Github className="w-4 h-4" /> Configurações do Repositório & Token PAT
+          <GitBranch className="w-4 h-4" /> Configurações do Repositório & Token PAT
         </button>
         <button
           onClick={() => setActiveSubTab('new_property')}

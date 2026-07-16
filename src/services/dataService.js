@@ -25,6 +25,9 @@ export const saveCompetitorsLocal = (data) => {
   }
 };
 
+// Alias usado pelo App.jsx (mantém compatibilidade de nomenclatura)
+export const saveCompetitors = saveCompetitorsLocal;
+
 export const resetToInitialData = () => {
   localStorage.removeItem(STORAGE_KEY);
   return initialCompetitors;
