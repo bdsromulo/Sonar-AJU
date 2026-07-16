@@ -1,0 +1,45 @@
+name: 🤖 Sonar Caju - 1-Click & Cron Price Sync Robot
+
+on:
+  schedule:
+    # Executa automaticamente toda madrugada às 04:00 BRT (07:00 UTC)
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    # Permite ser disparado com 1 clique pelo botão na interface do Sonar Caju ou via API REST
+  repository_dispatch:
+    types: [sync-prices]
+
+jobs:
+  sync_and_update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 📦 Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 🛠️ Instalar Dependências de Scrape & Análise
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 fake-useragent
+
+      - name: 🧭 Executar Robô Sonar Coletor em Nuvem
+        run: |
+          python scripts/sync_prices.py
+
+      - name: 💾 Commit & Push de Preços Atualizados (`competitors.json`)
+        run: |
+          git config --global user.name "Sonar Caju Bot 🤖"
+          git config --global user.email "bot@sonarcaju.aracaju.br"
+          git add data/competitors.json
+          if git diff --staged --quiet; then
+            echo "Nenhuma variação de preço detectada hoje."
+          else
+            git commit -m "🤖 Sonar Caju Auto-Sync: Atualização automática de tarifas e metas de mercado"
+            git push
+          fi
