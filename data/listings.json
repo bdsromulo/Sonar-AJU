@@ -1,0 +1,1378 @@
+[
+  {
+    "id": "abnb-897222574330189303",
+    "platform": "airbnb",
+    "platformId": "897222574330189303",
+    "url": "https://www.airbnb.com.br/rooms/897222574330189303",
+    "propertyKey": "minha-hospedagem",
+    "role": "mine",
+    "name": "Top 3 Qt, todos c/ Ar e TV, a 4 Qd orla. 120m² Grande",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.9787,
+      "lng": -37.0455,
+      "approx": true,
+      "address": "Rua Eng Francisco Manoel da Costa, 290 - Atalaia Ap 301, Aracaju, CEP 49035-110, Brasil"
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.94,
+      "count": 31,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": "Mesmo imóvel físico do bkng-top-3-qt-a-3-qd-da-orla-aracaju (propertyKey minha-hospedagem). Endereço exato vindo do Booking."
+  },
+  {
+    "id": "abnb-1348637264576878115",
+    "platform": "airbnb",
+    "platformId": "1348637264576878115",
+    "url": "https://www.airbnb.com.br/rooms/1348637264576878115",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento — 3 quartos e equipados — 1,7km da Praia",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.977976173180855,
+      "lng": -37.04586647692314,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.97,
+      "count": 30,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-1242659541135555733",
+    "platform": "airbnb",
+    "platformId": "1242659541135555733",
+    "url": "https://www.airbnb.com.br/rooms/1242659541135555733",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Aconchego da Orla de Atalaia",
+    "roomType": "Casa",
+    "location": {
+      "lat": -10.9907,
+      "lng": -37.0522,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.98,
+      "count": 47,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-1080681181203315011",
+    "platform": "airbnb",
+    "platformId": "1080681181203315011",
+    "url": "https://www.airbnb.com.br/rooms/1080681181203315011",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Ótima localização e conforto!",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.97213,
+      "lng": -37.04196,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 3,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.97,
+      "count": 63,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-4900690",
+    "platform": "airbnb",
+    "platformId": "4900690",
+    "url": "https://www.airbnb.com.br/rooms/4900690",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Casa 5 quartos na Atalaia #Lazer#",
+    "roomType": "Casa",
+    "location": {
+      "lat": -10.9856,
+      "lng": -37.0496,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 15,
+      "bedrooms": 5,
+      "beds": 6,
+      "baths": 7
+    },
+    "rating": {
+      "avg": 4.82,
+      "count": 82,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-26059011",
+    "platform": "airbnb",
+    "platformId": "26059011",
+    "url": "https://www.airbnb.com.br/rooms/26059011",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento aconchegante na Orla de Atalaia",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.99386,
+      "lng": -37.05329,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.91,
+      "count": 200,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-1028129449843725009",
+    "platform": "airbnb",
+    "platformId": "1028129449843725009",
+    "url": "https://www.airbnb.com.br/rooms/1028129449843725009",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "AP Coroa do Meio",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.966533527649489,
+      "lng": -37.04094573032911,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.99,
+      "count": 70,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-766594546072994857",
+    "platform": "airbnb",
+    "platformId": "766594546072994857",
+    "url": "https://www.airbnb.com.br/rooms/766594546072994857",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento com VISTA DO MAR — apartamento com vista para O mar",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.9683,
+      "lng": -37.0392,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 8,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.96,
+      "count": 81,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-23612322",
+    "platform": "airbnb",
+    "platformId": "23612322",
+    "url": "https://www.airbnb.com.br/rooms/23612322",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento de frente para o mar em Aracaju",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.9717,
+      "lng": -37.03644,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 8,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.98,
+      "count": 117,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-41992976",
+    "platform": "airbnb",
+    "platformId": "41992976",
+    "url": "https://www.airbnb.com.br/rooms/41992976",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento 350m da Orla de Atalaia/3 quartos",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.9769,
+      "lng": -37.04538,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.94,
+      "count": 48,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-25147261",
+    "platform": "airbnb",
+    "platformId": "25147261",
+    "url": "https://www.airbnb.com.br/rooms/25147261",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Lindo apartamento com vista para o mar e 3 suítes",
+    "roomType": "Condomínio",
+    "location": {
+      "lat": -10.99153,
+      "lng": -37.05258,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 3,
+      "baths": 5
+    },
+    "rating": {
+      "avg": 4.71,
+      "count": 77,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-570267783429553300",
+    "platform": "airbnb",
+    "platformId": "570267783429553300",
+    "url": "https://www.airbnb.com.br/rooms/570267783429553300",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "ARACAJU, SEU SONHO, SUA ESTADIA, LUGAR DE ALEGRIA.",
+    "roomType": "Loft",
+    "location": {
+      "lat": -10.97859,
+      "lng": -37.0441,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 2,
+      "beds": 4,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.92,
+      "count": 106,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-53653376",
+    "platform": "airbnb",
+    "platformId": "53653376",
+    "url": "https://www.airbnb.com.br/rooms/53653376",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Ap com 4 varandas Vista mar, na  Orla de Atalaia",
+    "roomType": "Condomínio",
+    "location": {
+      "lat": -10.98382,
+      "lng": -37.04683,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 10,
+      "bedrooms": 4,
+      "beds": 5,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.78,
+      "count": 46,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-51933886",
+    "platform": "airbnb",
+    "platformId": "51933886",
+    "url": "https://www.airbnb.com.br/rooms/51933886",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Clima praia, tranquilidade sítio (5 min da praia).",
+    "roomType": "Casa",
+    "location": {
+      "lat": -10.9623,
+      "lng": -37.04281,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 7,
+      "bedrooms": 3,
+      "beds": 6,
+      "baths": 1
+    },
+    "rating": {
+      "avg": 5,
+      "count": 110,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-881786144163875566",
+    "platform": "airbnb",
+    "platformId": "881786144163875566",
+    "url": "https://www.airbnb.com.br/rooms/881786144163875566",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Flat Rio e Mar: vista linda p/ o Atlântico e o Rio",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.9711,
+      "lng": -37.0397,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 1,
+      "beds": 2,
+      "baths": 1
+    },
+    "rating": {
+      "avg": 4.98,
+      "count": 162,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-53081862",
+    "platform": "airbnb",
+    "platformId": "53081862",
+    "url": "https://www.airbnb.com.br/rooms/53081862",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento com vista para o mar e banheira",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.999,
+      "lng": -37.0589,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.9,
+      "count": 21,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-54061607",
+    "platform": "airbnb",
+    "platformId": "54061607",
+    "url": "https://www.airbnb.com.br/rooms/54061607",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Casa adorável com piscina próximo a orla",
+    "roomType": "Casa",
+    "location": {
+      "lat": -10.97237,
+      "lng": -37.04512,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 1
+    },
+    "rating": {
+      "avg": 0,
+      "count": 0,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-25053711",
+    "platform": "airbnb",
+    "platformId": "25053711",
+    "url": "https://www.airbnb.com.br/rooms/25053711",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Casa p/ até 7 c/ Wi-Fi, Ar, Tv! ⭐️A 400m da praia ⭐️",
+    "roomType": "Casa de hóspedes",
+    "location": {
+      "lat": -10.98933,
+      "lng": -37.05466,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 7,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.98,
+      "count": 123,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-853378311351999452",
+    "platform": "airbnb",
+    "platformId": "853378311351999452",
+    "url": "https://www.airbnb.com.br/rooms/853378311351999452",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "01 BLUE OCEAN/7°And/5 Min Aeroporto/WiFi, AR, Garag",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.9928,
+      "lng": -37.0575,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 2,
+      "beds": 4,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.97,
+      "count": 120,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-41969747",
+    "platform": "airbnb",
+    "platformId": "41969747",
+    "url": "https://www.airbnb.com.br/rooms/41969747",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apt 3/4 com Vista Mar a 300m da ORLA de Atalaia",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.98919,
+      "lng": -37.05331,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 3,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.67,
+      "count": 108,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-47253317",
+    "platform": "airbnb",
+    "platformId": "47253317",
+    "url": "https://www.airbnb.com.br/rooms/47253317",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apt 2 quartos Orla e Frente Mar",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.97092,
+      "lng": -37.03668,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 5,
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.8,
+      "count": 111,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-25086241",
+    "platform": "airbnb",
+    "platformId": "25086241",
+    "url": "https://www.airbnb.com.br/rooms/25086241",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Lindo apto de frente para o mar , confira.",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.97171,
+      "lng": -37.03634,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 5,
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.77,
+      "count": 186,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-12853260",
+    "platform": "airbnb",
+    "platformId": "12853260",
+    "url": "https://www.airbnb.com.br/rooms/12853260",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Seu Apê na Praia 2/4 - Perfeito pra Família!",
+    "roomType": "Condomínio",
+    "location": {
+      "lat": -10.972,
+      "lng": -37.0434,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 2,
+      "beds": 4,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 4.96,
+      "count": 237,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-21745100",
+    "platform": "airbnb",
+    "platformId": "21745100",
+    "url": "https://www.airbnb.com.br/rooms/21745100",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "APARTAMENTO A 300m DA ORLA DE ATALAIA",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.97469,
+      "lng": -37.04226,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 4,
+      "bedrooms": 3,
+      "beds": 4,
+      "baths": 3
+    },
+    "rating": {
+      "avg": 5,
+      "count": 4,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-550024786948766915",
+    "platform": "airbnb",
+    "platformId": "550024786948766915",
+    "url": "https://www.airbnb.com.br/rooms/550024786948766915",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento aconchegante a poucas quadras da orla",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.97463,
+      "lng": -37.04191,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 3,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.93,
+      "count": 28,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "abnb-39869439",
+    "platform": "airbnb",
+    "platformId": "39869439",
+    "url": "https://www.airbnb.com.br/rooms/39869439",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento-350m da orla de Aracaju",
+    "roomType": "Apartamento",
+    "location": {
+      "lat": -10.978,
+      "lng": -37.04389,
+      "approx": true,
+      "address": null
+    },
+    "capacity": {
+      "guests": 7,
+      "bedrooms": 3,
+      "beds": 5,
+      "baths": 2
+    },
+    "rating": {
+      "avg": 4.95,
+      "count": 108,
+      "scale": 5
+    },
+    "petsAllowed": true,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-top-3-qt-a-3-qd-da-orla-aracaju",
+    "platform": "booking",
+    "platformId": "top-3-qt-a-3-qd-da-orla-aracaju",
+    "url": "https://www.booking.com/hotel/br/top-3-qt-a-3-qd-da-orla-aracaju.pt-br.html",
+    "propertyKey": "minha-hospedagem",
+    "role": "mine",
+    "name": "Top Ap 3 Qts, todos com Ar Cond e TV, a 3 Qd da orla Sua família sem aperto Não sofra férias, desfrute-as",
+    "roomType": null,
+    "location": {
+      "lat": -10.978724064953907,
+      "lng": -37.04553955952454,
+      "approx": false,
+      "address": "Rua Eng Francisco Manoel da Costa, 290 - Atalaia Ap 301, Aracaju, CEP 49035-110, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.8,
+      "count": 58,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-praia-e-mar",
+    "platform": "booking",
+    "platformId": "praia-e-mar",
+    "url": "https://www.booking.com/hotel/br/praia-e-mar.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Hotel Praia e Mar",
+    "roomType": null,
+    "location": {
+      "lat": -10.985185626198405,
+      "lng": -37.04645365476608,
+      "approx": false,
+      "address": "Av. Santos Dumont, 433 - Atalaia, Aracaju, CEP 49035-730, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 8.2,
+      "count": 1019,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-casa-2-4-para-temporada",
+    "platform": "booking",
+    "platformId": "casa-2-4-para-temporada",
+    "url": "https://www.booking.com/hotel/br/casa-2-4-para-temporada.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Casa 2/4 para temporada",
+    "roomType": null,
+    "location": {
+      "lat": -10.992803,
+      "lng": -37.054576,
+      "approx": false,
+      "address": "670 Rua Jornalista Paulo Costa, Aracaju, CEP 49037-340, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.8,
+      "count": 66,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-apartamento-clube-3-4-com-ar-condicionado",
+    "platform": "booking",
+    "platformId": "apartamento-clube-3-4-com-ar-condicionado",
+    "url": "https://www.booking.com/hotel/br/apartamento-clube-3-4-com-ar-condicionado.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Booking apartamento-clube-3-4-com-ar-condicionado",
+    "roomType": null,
+    "location": {
+      "lat": null,
+      "lng": null,
+      "approx": false,
+      "address": null
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": null,
+      "count": null,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": false,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": "Fora do ar na verificação de 2026-07-16 (redirecionou para busca)."
+  },
+  {
+    "id": "bkng-terra-do-sol",
+    "platform": "booking",
+    "platformId": "terra-do-sol",
+    "url": "https://www.booking.com/hotel/br/terra-do-sol.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Hotel Terra do Sol",
+    "roomType": null,
+    "location": {
+      "lat": -10.968370416620461,
+      "lng": -37.04147547483444,
+      "approx": false,
+      "address": "Av. Mario Jorge Menezes Vieira, 1722, Aracaju, CEP 49035-660, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 8,
+      "count": 1590,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-ap-beira-mar-na-orla",
+    "platform": "booking",
+    "platformId": "ap-beira-mar-na-orla",
+    "url": "https://www.booking.com/hotel/br/ap-beira-mar-na-orla.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Ap Beira mar na Orla",
+    "roomType": null,
+    "location": {
+      "lat": -10.984782,
+      "lng": -37.046478,
+      "approx": false,
+      "address": "18 Rua Doutor Milton Dortas Mendonça Ed Corsário, ap 201, Aracaju, CEP 49035-260, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.2,
+      "count": 35,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-ap-espetacular-a-5-minutos-da-praia",
+    "platform": "booking",
+    "platformId": "ap-espetacular-a-5-minutos-da-praia",
+    "url": "https://www.booking.com/hotel/br/ap-espetacular-a-5-minutos-da-praia.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Ap. Espetacular. À 5 minutos da praia.",
+    "roomType": null,
+    "location": {
+      "lat": -10.970794,
+      "lng": -37.059957,
+      "approx": false,
+      "address": "1349 Avenida Murilo Dantas Ap 501 bloco Jairo Melo, Aracaju, CEP 49032-490, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 8.8,
+      "count": 61,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-apartamento-atalaia-aracaju",
+    "platform": "booking",
+    "platformId": "apartamento-atalaia-aracaju",
+    "url": "https://www.booking.com/hotel/br/apartamento-atalaia-aracaju.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento Atalaia Aracaju",
+    "roomType": null,
+    "location": {
+      "lat": -10.9919218282959,
+      "lng": -37.0573580988499,
+      "approx": false,
+      "address": "Rua Jordao de Oliveira, 559 Apto 204, Aracaju, CEP 49037-330, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.4,
+      "count": 11,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-condominio-residencial-santa-cecilia",
+    "platform": "booking",
+    "platformId": "condominio-residencial-santa-cecilia",
+    "url": "https://www.booking.com/hotel/br/condominio-residencial-santa-cecilia.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apto Praia Atalaia",
+    "roomType": null,
+    "location": {
+      "lat": -10.98786767863694,
+      "lng": -37.05639303295745,
+      "approx": false,
+      "address": "Rua Napoleão Dórea, Aracaju, CEP 49037-460, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 8.7,
+      "count": 26,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-apartamento-pertinho-da-praia-aracaju",
+    "platform": "booking",
+    "platformId": "apartamento-pertinho-da-praia-aracaju",
+    "url": "https://www.booking.com/hotel/br/apartamento-pertinho-da-praia-aracaju.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apto na Praia de Atalaia a 100 metros da Passarela do Caranguejo",
+    "roomType": null,
+    "location": {
+      "lat": -10.994039,
+      "lng": -37.053744,
+      "approx": false,
+      "address": "Rua Niceu Dantas, número 740. Condomínio Residencial Suele Fontes Faria Souto, Bloco B, apto 104., Aracaju, CEP 49037-470, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9,
+      "count": 50,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-apartamento-novo-3-47-4-bem-aconchegante-na-farolandia-todos-os-quartos-com-ar-c",
+    "platform": "booking",
+    "platformId": "apartamento-novo-3-47-4-bem-aconchegante-na-farolandia-todos-os-quartos-com-ar-c",
+    "url": "https://www.booking.com/hotel/br/apartamento-novo-3-47-4-bem-aconchegante-na-farolandia-todos-os-quartos-com-ar-c.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento com três quartos, bem aconchegante e localizado na farolândia, todos os quartos com ar condicionado",
+    "roomType": null,
+    "location": {
+      "lat": -10.97562,
+      "lng": -37.057926,
+      "approx": false,
+      "address": "20 Rua Doutor Lúcio Prado Edifício Edgard Menezes, apartamento 804, Aracaju, CEP 49032-250, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.7,
+      "count": 23,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-apto-proximo-a-fac-pio-x",
+    "platform": "booking",
+    "platformId": "apto-proximo-a-fac-pio-x",
+    "url": "https://www.booking.com/hotel/br/apto-proximo-a-fac-pio-x.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Booking apto-proximo-a-fac-pio-x",
+    "roomType": null,
+    "location": {
+      "lat": null,
+      "lng": null,
+      "approx": false,
+      "address": null
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": null,
+      "count": null,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": false,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": "Fora do ar na verificação de 2026-07-16 (redirecionou para busca)."
+  },
+  {
+    "id": "bkng-apartamento-novo-proximo-ao-shopping-jardins",
+    "platform": "booking",
+    "platformId": "apartamento-novo-proximo-ao-shopping-jardins",
+    "url": "https://www.booking.com/hotel/br/apartamento-novo-proximo-ao-shopping-jardins.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Apartamento Novo - Próximo ao Shopping Jardins",
+    "roomType": null,
+    "location": {
+      "lat": -10.942114256930939,
+      "lng": -37.06594473610688,
+      "approx": false,
+      "address": "Avenida Marieta Leite Bloco B Ap 1304, Aracaju, CEP 49027-190, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.9,
+      "count": 16,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-atraente-apartamento-na-orla-de-atalaia",
+    "platform": "booking",
+    "platformId": "atraente-apartamento-na-orla-de-atalaia",
+    "url": "https://www.booking.com/hotel/br/atraente-apartamento-na-orla-de-atalaia.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "TEMPORADA737 Top 2 Quartos na Atalaia Condominio Clube",
+    "roomType": null,
+    "location": {
+      "lat": -10.992538,
+      "lng": -37.053644,
+      "approx": false,
+      "address": "Rua Francisco Rabelo Leite Neto, 500 Bl 2, Apto 104, Aracaju, CEP 49037-240, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.4,
+      "count": 20,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-concept-tower-praia-apart",
+    "platform": "booking",
+    "platformId": "concept-tower-praia-apart",
+    "url": "https://www.booking.com/hotel/br/concept-tower-praia-apart.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Concept Tower Praia Apart",
+    "roomType": null,
+    "location": {
+      "lat": -10.992892,
+      "lng": -37.055736,
+      "approx": false,
+      "address": "Avenida Desembargador João Bôsco de Andrade Lima N. 726, Aracaju, CEP 49037-130, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.7,
+      "count": 104,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-perfeito-apartamento-na-orla-de-atalaia",
+    "platform": "booking",
+    "platformId": "perfeito-apartamento-na-orla-de-atalaia",
+    "url": "https://www.booking.com/hotel/br/perfeito-apartamento-na-orla-de-atalaia.pt-br.html",
+    "propertyKey": null,
+    "role": "favorite",
+    "name": "Village Caranguejo - FLAT 02 Quartos",
+    "roomType": null,
+    "location": {
+      "lat": -10.995289706964689,
+      "lng": -37.055101494720454,
+      "approx": false,
+      "address": "Rua Francisco Rabelo Leite Neto, 737, Aracaju, CEP 49037-490, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 9.3,
+      "count": 339,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  },
+  {
+    "id": "bkng-comfort-aracaju",
+    "platform": "booking",
+    "platformId": "comfort-aracaju",
+    "url": "https://www.booking.com/hotel/br/comfort-aracaju.pt-br.html",
+    "propertyKey": null,
+    "role": "benchmark",
+    "name": "ARCUS Hotel Aracaju by ATLANTICA",
+    "roomType": null,
+    "location": {
+      "lat": -10.9787357244831,
+      "lng": -37.0440593508392,
+      "approx": false,
+      "address": "498 Avenida Mario Jorge Menezes Viêira, Aracaju, CEP 49035-660, Brasil"
+    },
+    "capacity": {
+      "guests": null,
+      "bedrooms": null,
+      "beds": null,
+      "baths": null
+    },
+    "rating": {
+      "avg": 8.7,
+      "count": 1681,
+      "scale": 10
+    },
+    "petsAllowed": null,
+    "active": true,
+    "addedAt": "2026-07-16",
+    "metaUpdatedAt": "2026-07-16",
+    "notes": ""
+  }
+]
