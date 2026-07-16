@@ -63,9 +63,19 @@ npm run build   # precisa passar sem erros
 npm run lint
 ```
 
-## 🗺️ Estado / roadmap
+## 🗺️ Estado / roadmap (redefinido em jul/2026)
 
-Ver `ESTADO_ATUAL_E_HANDOFF.md` para o histórico e `REPOSITORIO.md` para a arquitetura.
-Ponto de atenção conhecido: o "1-Click Auto Sync" no front (`App.jsx`) hoje é uma
-**simulação** (oscilação via `Math.random`), não coleta real. A coleta real vive no
-workflow/`scripts/sync_prices.py`. Deixar isso claro ao evoluir a feature.
+`ESTADO_ATUAL_E_HANDOFF.md` e `REPOSITORIO.md` descrevem a fase inicial e estão
+**parcialmente obsoletos**. Direção vigente:
+
+- **Unidade de dado = observação de preço**: (imóvel, check-in/out exatos, hóspedes, pets)
+  → preço total com breakdown. Append-only, com histórico. O modelo `basePrice + calendar`
+  de temporadas está descontinuado.
+- **Temporadas não existem na UI** — o gestor simula datas exatas. "Temporada" é apenas
+  política de contenção de coleta (quais janelas de datas amostrar, com que frequência).
+- **Coleta**: bookmarklet endurecido para favoritos; bookmarklet de página de busca para
+  varredura ampla da orla. Nunca scraping via GitHub Actions (IP datacenter bloqueado).
+- O front-end atual será reescrito em torno do simulador de datas — não investir nele.
+- Aviso: o "1-Click Auto Sync" (`App.jsx`) e `scripts/sync_prices.py` são **simulações**
+  (random) e não coletam nada real. Serão substituídos/rotulados quando a coleta real
+  estiver de pé.
