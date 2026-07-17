@@ -56,15 +56,15 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <span>Coletor</span>
             </button>
             <button
-              onClick={() => setActiveTab('admin')}
+              onClick={() => setActiveTab('config')}
               className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
-                activeTab === 'admin'
+                activeTab === 'config'
                   ? 'bg-slate-800 text-cyan-400 shadow-sm border border-slate-700/60'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               <Settings className="w-4 h-4" />
-              <span>Gestão & GitHub</span>
+              <span>Configuração</span>
             </button>
           </div>
 

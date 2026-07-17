@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Simulador from './components/Simulador';
-import AdminPanel from './components/AdminPanel';
 import ColetorPanel from './components/ColetorPanel';
-import BookmarkletModal from './components/BookmarkletModal';
-import { getCompetitors, saveCompetitors, getSettings } from './services/dataService';
+import ConfigPanel from './components/ConfigPanel';
+import { getSettings } from './services/dataService';
 
 export default function App() {
-  const [competitors, setCompetitors] = useState([]);
   const [settings, setSettings] = useState(getSettings());
-  const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard' | 'coletor' | 'admin'
-  const [isBookmarkletModalOpen, setIsBookmarkletModalOpen] = useState(false);
-
-  // AdminPanel (modelo v1) ainda usa a base antiga de concorrentes.
-  useEffect(() => {
-    setCompetitors(getCompetitors());
-  }, []);
-  useEffect(() => {
-    if (competitors.length > 0) saveCompetitors(competitors);
-  }, [competitors]);
+  const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard' | 'coletor' | 'config'
 
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
@@ -33,21 +22,10 @@ export default function App() {
           </div>
         ) : (
           <div className="animate-fadeIn">
-            <AdminPanel
-              competitors={competitors}
-              setCompetitors={setCompetitors}
-              settings={settings}
-              setSettings={setSettings}
-              onOpenBookmarkletModal={() => setIsBookmarkletModalOpen(true)}
-            />
+            <ConfigPanel settings={settings} setSettings={setSettings} />
           </div>
         )}
       </main>
-
-      <BookmarkletModal
-        isOpen={isBookmarkletModalOpen}
-        onClose={() => setIsBookmarkletModalOpen(false)}
-      />
 
       <footer className="border-t border-slate-900 bg-slate-950/80 py-6 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
