@@ -25,10 +25,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      # Tenta habilitar o GitHub Pages automaticamente (fonte = GitHub Actions).
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
