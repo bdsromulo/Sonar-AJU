@@ -26,13 +26,13 @@
       "reviewCount": 38
     },
     "pricing": {
-      "basePrice": 340.00,
-      "cleaningFee": 150.00,
+      "basePrice": 340.0,
+      "cleaningFee": 150.0,
       "calendar": [
         {
           "startDate": "2026-07-01",
           "endDate": "2026-07-31",
-          "pricePerNight": 350.00,
+          "pricePerNight": 350.0,
           "minNights": 2,
           "isAvailable": true,
           "seasonNote": "Férias de Julho"
@@ -40,7 +40,7 @@
         {
           "startDate": "2026-12-20",
           "endDate": "2027-01-05",
-          "pricePerNight": 650.00,
+          "pricePerNight": 650.0,
           "minNights": 4,
           "isAvailable": true,
           "seasonNote": "Réveillon / Alta Temporada"
@@ -50,7 +50,7 @@
     "images": [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
     ],
-    "lastUpdated": "2026-07-16T16:00:00Z"
+    "lastUpdated": "2026-07-17T09:11:43.821376"
   },
   {
     "id": "benchmark_arcus_hotel",
@@ -75,17 +75,17 @@
       "hasAirCond": true,
       "hasParking": true,
       "hasSeaView": true,
-      "rating": 4.80,
+      "rating": 4.8,
       "reviewCount": 512
     },
     "pricing": {
-      "basePrice": 680.00,
-      "cleaningFee": 0.00,
+      "basePrice": 695.95,
+      "cleaningFee": 0.0,
       "calendar": [
         {
           "startDate": "2026-07-01",
           "endDate": "2026-07-31",
-          "pricePerNight": 700.00,
+          "pricePerNight": 700.0,
           "minNights": 1,
           "isAvailable": true,
           "seasonNote": "Férias de Julho (Meta 50%: R$ 350)"
@@ -93,7 +93,7 @@
         {
           "startDate": "2026-12-20",
           "endDate": "2027-01-05",
-          "pricePerNight": 1300.00,
+          "pricePerNight": 1300.0,
           "minNights": 3,
           "isAvailable": true,
           "seasonNote": "Réveillon / Alta Temporada (Meta 50%: R$ 650)"
@@ -103,7 +103,7 @@
     "images": [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
     ],
-    "lastUpdated": "2026-07-16T16:00:00Z"
+    "lastUpdated": "2026-07-17T09:11:45.876558"
   },
   {
     "id": "airbnb_sample_101",
@@ -116,8 +116,8 @@
     "location": {
       "address": "Próximo à Passarela do Caranguejo, Atalaia, Aracaju - SE",
       "neighborhood": "Atalaia",
-      "lat": -10.9920,
-      "lng": -37.0450,
+      "lat": -10.992,
+      "lng": -37.045,
       "distanceToBeachKm": 0.25
     },
     "features": {
@@ -132,13 +132,13 @@
       "reviewCount": 64
     },
     "pricing": {
-      "basePrice": 410.00,
-      "cleaningFee": 180.00,
+      "basePrice": 412.8,
+      "cleaningFee": 180.0,
       "calendar": [
         {
           "startDate": "2026-07-01",
           "endDate": "2026-07-31",
-          "pricePerNight": 440.00,
+          "pricePerNight": 440.0,
           "minNights": 2,
           "isAvailable": false,
           "seasonNote": "Férias de Julho"
@@ -146,7 +146,7 @@
         {
           "startDate": "2026-12-20",
           "endDate": "2027-01-05",
-          "pricePerNight": 820.00,
+          "pricePerNight": 820.0,
           "minNights": 5,
           "isAvailable": true,
           "seasonNote": "Réveillon / Alta Temporada"
@@ -156,7 +156,7 @@
     "images": [
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
     ],
-    "lastUpdated": "2026-07-16T16:00:00Z"
+    "lastUpdated": "2026-07-17T09:11:47.168774"
   },
   {
     "id": "booking_sample_202",
@@ -170,7 +170,7 @@
       "address": "Região dos Lagos da Orla, Atalaia, Aracaju - SE",
       "neighborhood": "Atalaia",
       "lat": -10.9785,
-      "lng": -37.0410,
+      "lng": -37.041,
       "distanceToBeachKm": 0.3
     },
     "features": {
@@ -181,17 +181,17 @@
       "hasAirCond": true,
       "hasParking": true,
       "hasSeaView": true,
-      "rating": 4.70,
+      "rating": 4.7,
       "reviewCount": 112
     },
     "pricing": {
-      "basePrice": 220.00,
-      "cleaningFee": 100.00,
+      "basePrice": 225.41,
+      "cleaningFee": 100.0,
       "calendar": [
         {
           "startDate": "2026-07-01",
           "endDate": "2026-07-31",
-          "pricePerNight": 240.00,
+          "pricePerNight": 240.0,
           "minNights": 1,
           "isAvailable": true,
           "seasonNote": "Férias de Julho"
@@ -199,7 +199,7 @@
         {
           "startDate": "2026-12-20",
           "endDate": "2027-01-05",
-          "pricePerNight": 480.00,
+          "pricePerNight": 480.0,
           "minNights": 3,
           "isAvailable": true,
           "seasonNote": "Réveillon / Alta Temporada"
@@ -209,6 +209,6 @@
     "images": [
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80"
     ],
-    "lastUpdated": "2026-07-16T16:00:00Z"
+    "lastUpdated": "2026-07-17T09:11:48.399590"
   }
 ]
