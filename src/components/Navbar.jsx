@@ -1,7 +1,7 @@
 import React from 'react';
-import { Radar, RefreshCw, Settings, MapPin, Sparkles, Compass } from 'lucide-react';
+import { Radar, Settings, MapPin, Compass } from 'lucide-react';
 
-export default function Navbar({ activeTab, setActiveTab, onSyncClick, isSyncing, lastSynced }) {
+export default function Navbar({ activeTab, setActiveTab }) {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 transition-all shadow-xl shadow-cyan-950/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -28,24 +28,8 @@ export default function Navbar({ activeTab, setActiveTab, onSyncClick, isSyncing
           </div>
         </div>
 
-        {/* 1-Click Sync & Mode Switch */}
+        {/* Mode Switch */}
         <div className="flex items-center gap-4">
-          
-          {/* 1-Click Auto Sync Button */}
-          <button
-            onClick={onSyncClick}
-            disabled={isSyncing}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
-              isSyncing
-                ? 'bg-slate-800 text-slate-400 cursor-not-allowed border border-slate-700'
-                : 'bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5'
-            }`}
-            title="Buscar preços atualizados via nuvem com 1 clique"
-          >
-            <RefreshCw className={`w-4 h-4 ${isSyncing ? 'animate-spin' : ''}`} />
-            <span>{isSyncing ? 'Sincronizando...' : '1-Click Auto Sync'}</span>
-            <Sparkles className="w-3.5 h-3.5 text-slate-950 opacity-80" />
-          </button>
 
           {/* Nav Tabs */}
           <div className="flex bg-slate-900/90 p-1 rounded-xl border border-slate-800">

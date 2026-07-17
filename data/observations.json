@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "id": "obs-seed-rev-arcus",
+    "listingId": "bkng-comfort-aracaju",
+    "query": { "checkin": "2026-12-28", "checkout": "2027-01-02", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": true,
+    "price": { "total": 4974, "nightly": null, "cleaning": null, "service": null, "taxes": 0, "currency": "BRL" },
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:23:55-03:00",
+    "raw": { "note": "Menor quarto Arcus p/ 2 pessoas; para 4 hóspedes exigiria 2 quartos." }
+  },
+  {
+    "id": "obs-seed-rev-casa24",
+    "listingId": "bkng-casa-2-4-para-temporada",
+    "query": { "checkin": "2026-12-28", "checkout": "2027-01-02", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": true,
+    "price": { "total": 6056, "nightly": null, "cleaning": null, "service": null, "taxes": null, "currency": "BRL" },
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:25:47-03:00"
+  },
+  {
+    "id": "obs-seed-rev-father",
+    "listingId": "bkng-top-3-qt-a-3-qd-da-orla-aracaju",
+    "query": { "checkin": "2026-12-28", "checkout": "2027-01-02", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": false,
+    "price": null,
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:23:23-03:00"
+  },
+  {
+    "id": "obs-seed-rev-village",
+    "listingId": "bkng-perfeito-apartamento-na-orla-de-atalaia",
+    "query": { "checkin": "2026-12-28", "checkout": "2027-01-02", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": false,
+    "price": null,
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:24:37-03:00"
+  },
+  {
+    "id": "obs-seed-rev-concept",
+    "listingId": "bkng-concept-tower-praia-apart",
+    "query": { "checkin": "2026-12-28", "checkout": "2027-01-02", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": false,
+    "price": null,
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:25:06-03:00"
+  },
+  {
+    "id": "obs-seed-set-village",
+    "listingId": "bkng-perfeito-apartamento-na-orla-de-atalaia",
+    "query": { "checkin": "2026-09-18", "checkout": "2026-09-21", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": true,
+    "price": { "total": 1834, "nightly": null, "cleaning": null, "service": null, "taxes": null, "currency": "BRL" },
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:27:07-03:00"
+  },
+  {
+    "id": "obs-seed-set-praiamar",
+    "listingId": "bkng-praia-e-mar",
+    "query": { "checkin": "2026-09-18", "checkout": "2026-09-21", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": true,
+    "price": { "total": 1180, "nightly": null, "cleaning": null, "service": null, "taxes": 0, "currency": "BRL" },
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:28:43-03:00"
+  },
+  {
+    "id": "obs-seed-set-casa24",
+    "listingId": "bkng-casa-2-4-para-temporada",
+    "query": { "checkin": "2026-09-18", "checkout": "2026-09-21", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": true,
+    "price": { "total": 1057, "nightly": null, "cleaning": null, "service": null, "taxes": null, "currency": "BRL" },
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:29:14-03:00"
+  },
+  {
+    "id": "obs-seed-set-father",
+    "listingId": "bkng-top-3-qt-a-3-qd-da-orla-aracaju",
+    "query": { "checkin": "2026-09-18", "checkout": "2026-09-21", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": false,
+    "price": null,
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:26:30-03:00"
+  },
+  {
+    "id": "obs-seed-set-concept",
+    "listingId": "bkng-concept-tower-praia-apart",
+    "query": { "checkin": "2026-09-18", "checkout": "2026-09-21", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": false,
+    "price": null,
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:27:41-03:00"
+  },
+  {
+    "id": "obs-seed-set-pertinho",
+    "listingId": "bkng-apartamento-pertinho-da-praia-aracaju",
+    "query": { "checkin": "2026-09-18", "checkout": "2026-09-21", "adults": 4, "children": 0, "infants": 0, "pets": null, "rooms": 1 },
+    "available": false,
+    "price": null,
+    "source": "browser-mcp",
+    "collectedAt": "2026-07-16T23:28:09-03:00"
+  }
+]
