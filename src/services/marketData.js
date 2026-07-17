@@ -72,14 +72,22 @@ export const buildMarketSnapshot = (query) => {
   const nights = nightsBetween(query.checkin, query.checkout);
   const caps = capacityMap();
 
+  const f = query.filters || {};
   const rows = listings
     .filter((l) => l.active)
     .map((l) => {
       const est = estimateRateForDate(l, query.checkin);
       const cap = caps.get(l.id);
+      const cls = l.classification || {};
       const fitsGuests = cap == null ? null : cap >= query.guests;
       const fitsPet = !query.pet ? true : l.petsAllowed === true ? true : l.petsAllowed == null ? null : false;
-      const comparable = fitsGuests !== false && fitsPet !== false;
+      // Filtros de classificação (só excluem quando há certeza contrária).
+      const fitsPool = !f.poolOnly ? true : cls.pool === true ? true : cls.pool === false ? false : null;
+      const fitsKind = !f.kind || f.kind === 'all' ? true : cls.kind ? cls.kind === f.kind : null;
+      const fitsStars =
+        !f.minStars || cls.kind !== 'hotel' ? true : cls.stars != null ? cls.stars >= f.minStars : null;
+      const comparable =
+        fitsGuests !== false && fitsPet !== false && fitsPool !== false && fitsKind !== false && fitsStars !== false;
       const perNight = est?.perNight ?? null;
       return {
         listing: l,
@@ -87,8 +95,11 @@ export const buildMarketSnapshot = (query) => {
         perNight,
         estTotal: perNight != null && nights ? perNight * nights : null,
         cap,
+        cls,
         fitsGuests,
         fitsPet,
+        fitsPool,
+        fitsKind,
         comparable,
         status: perNight != null ? 'ok' : 'sem-dado'
       };
@@ -136,9 +147,10 @@ export const getCollectedWindows = () => {
 };
 
 export const getDefaultQuery = () => {
+  const filters = { poolOnly: false, kind: 'all', minStars: 0 };
   const best = getCollectedWindows().slice().sort((a, b) => b.priced - a.priced)[0];
-  if (best) return { checkin: best.checkin, checkout: best.checkout, guests: 4, pet: false };
-  return { checkin: '2026-08-15', checkout: '2026-08-18', guests: 4, pet: false };
+  if (best) return { checkin: best.checkin, checkout: best.checkout, guests: 4, pet: false, filters };
+  return { checkin: '2026-08-15', checkout: '2026-08-18', guests: 4, pet: false, filters };
 };
 
 export const fmtBRL = (v) =>

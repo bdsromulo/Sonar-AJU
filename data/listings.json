@@ -29,7 +29,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": "Mesmo imóvel físico do bkng-top-3-qt-a-3-qd-da-orla-aracaju (propertyKey minha-hospedagem). Endereço exato vindo do Booking."
+    "notes": "Mesmo imóvel físico do bkng-top-3-qt-a-3-qd-da-orla-aracaju (propertyKey minha-hospedagem). Endereço exato vindo do Booking.",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-1348637264576878115",
@@ -61,7 +66,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-1242659541135555733",
@@ -93,7 +103,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-1080681181203315011",
@@ -125,7 +140,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-4900690",
@@ -157,7 +177,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-26059011",
@@ -189,7 +214,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-1028129449843725009",
@@ -221,7 +251,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-766594546072994857",
@@ -253,7 +288,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-23612322",
@@ -285,7 +325,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-41992976",
@@ -317,7 +362,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-25147261",
@@ -349,7 +399,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-570267783429553300",
@@ -381,7 +436,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-53653376",
@@ -413,7 +473,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-51933886",
@@ -445,7 +510,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-881786144163875566",
@@ -477,7 +547,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-53081862",
@@ -509,7 +584,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-54061607",
@@ -541,7 +621,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-25053711",
@@ -573,7 +658,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "abnb-853378311351999452",
@@ -605,7 +695,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-41969747",
@@ -637,7 +732,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-47253317",
@@ -669,7 +769,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-25086241",
@@ -701,7 +806,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-12853260",
@@ -733,7 +843,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-21745100",
@@ -765,7 +880,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-550024786948766915",
@@ -797,7 +917,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "abnb-39869439",
@@ -829,7 +954,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "bkng-top-3-qt-a-3-qd-da-orla-aracaju",
@@ -861,7 +991,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": false,
+      "stars": null
+    }
   },
   {
     "id": "bkng-praia-e-mar",
@@ -893,7 +1028,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "hotel",
+      "pool": true,
+      "stars": 3
+    }
   },
   {
     "id": "bkng-casa-2-4-para-temporada",
@@ -925,7 +1065,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-apartamento-clube-3-4-com-ar-condicionado",
@@ -989,7 +1134,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "hotel",
+      "pool": true,
+      "stars": 3
+    }
   },
   {
     "id": "bkng-ap-beira-mar-na-orla",
@@ -1021,7 +1171,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-ap-espetacular-a-5-minutos-da-praia",
@@ -1053,7 +1208,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-apartamento-atalaia-aracaju",
@@ -1085,7 +1245,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-condominio-residencial-santa-cecilia",
@@ -1117,7 +1282,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-apartamento-pertinho-da-praia-aracaju",
@@ -1149,7 +1319,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-apartamento-novo-3-47-4-bem-aconchegante-na-farolandia-todos-os-quartos-com-ar-c",
@@ -1181,7 +1356,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-apto-proximo-a-fac-pio-x",
@@ -1245,7 +1425,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-atraente-apartamento-na-orla-de-atalaia",
@@ -1277,7 +1462,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-concept-tower-praia-apart",
@@ -1309,7 +1499,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-perfeito-apartamento-na-orla-de-atalaia",
@@ -1341,7 +1536,12 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "residential",
+      "pool": true,
+      "stars": null
+    }
   },
   {
     "id": "bkng-comfort-aracaju",
@@ -1373,6 +1573,11 @@
     "active": true,
     "addedAt": "2026-07-16",
     "metaUpdatedAt": "2026-07-16",
-    "notes": ""
+    "notes": "",
+    "classification": {
+      "kind": "hotel",
+      "pool": true,
+      "stars": 4
+    }
   }
 ]

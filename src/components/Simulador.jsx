@@ -101,6 +101,8 @@ export default function Simulador() {
   }, [orlaMedian, dailyBase]);
 
   const setQ = (patch) => setQuery((q) => ({ ...q, ...patch }));
+  const setF = (patch) => setQuery((q) => ({ ...q, filters: { ...q.filters, ...patch } }));
+  const filters = query.filters || {};
 
   // Cálculo do "seu preço" (por imóvel; sliders são premissas explícitas do gestor)
   const pricing = useMemo(() => {
@@ -180,11 +182,61 @@ export default function Simulador() {
           </div>
         </div>
 
+        {/* Filtros de classificação */}
+        <div className="flex flex-wrap items-center gap-2 mt-4 pt-3 border-t border-slate-800/70">
+          <span className="text-[11px] text-slate-500 mr-1">Comparar com:</span>
+          {[
+            { k: 'all', label: 'Tudo' },
+            { k: 'residential', label: '🏠 Residencial' },
+            { k: 'hotel', label: '🏨 Hotel' }
+          ].map((o) => (
+            <button
+              key={o.k}
+              onClick={() => setF({ kind: o.k })}
+              className={`text-[11px] px-2.5 py-1 rounded-full border transition-all ${
+                (filters.kind || 'all') === o.k
+                  ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40'
+                  : 'bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700'
+              }`}
+            >
+              {o.label}
+            </button>
+          ))}
+          <button
+            onClick={() => setF({ poolOnly: !filters.poolOnly })}
+            className={`text-[11px] px-2.5 py-1 rounded-full border transition-all ${
+              filters.poolOnly
+                ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40'
+                : 'bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700'
+            }`}
+          >
+            🏊 Só com piscina
+          </button>
+          {filters.kind === 'hotel' && (
+            <div className="flex items-center gap-1">
+              {[0, 3, 4].map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setF({ minStars: s })}
+                  className={`text-[11px] px-2.5 py-1 rounded-full border transition-all ${
+                    (filters.minStars || 0) === s
+                      ? 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+                      : 'bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700'
+                  }`}
+                >
+                  {s === 0 ? 'qualquer ★' : `${s}★+`}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         <div className="flex items-center justify-between mt-3">
           <div className="text-[11px] text-slate-500">
             {nights ? `${nights} noite${nights > 1 ? 's' : ''}` : 'check-out deve ser após o check-in'}
-            {query.pet && ' · filtrando quem aceita pet'}
-            {query.guests > BASE_OCCUPANCY && ` · quem cabe ≥ ${query.guests}`}
+            {query.pet && ' · aceita pet'}
+            {query.guests > BASE_OCCUPANCY && ` · cabe ≥ ${query.guests}`}
+            {filters.poolOnly && ' · com piscina'}
           </div>
           {windows.length > 0 && (
             <div className="hidden md:flex items-center gap-1.5">
@@ -367,7 +419,10 @@ export default function Simulador() {
                     Fora dos comparáveis ({rowsExcluded.length})
                   </div>
                   <div className="text-[11px] text-slate-500 leading-relaxed">
-                    Não cabem {query.guests} hóspedes{query.pet ? ' ou não aceitam pet' : ''}.
+                    Não atendem à consulta ({query.guests} hóspedes
+                    {query.pet ? ' + pet' : ''}
+                    {filters.poolOnly ? ' + piscina' : ''}
+                    {filters.kind && filters.kind !== 'all' ? ` + ${filters.kind === 'hotel' ? 'hotel' : 'residencial'}` : ''}).
                   </div>
                 </div>
               )}
