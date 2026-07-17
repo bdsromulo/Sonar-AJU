@@ -85,8 +85,10 @@ export const buildMarketSnapshot = (win) => {
     : null;
 
   const arcusRow = rows.find((r) => r.listing.role === 'benchmark');
-  const arcusPerNight = arcusRow?.perNight ?? null;
-  const arcusTarget = arcusPerNight != null ? arcusPerNight / 2 : null;
+  const arcusPerNight = arcusRow?.perNight ?? null; // diária de 1 quarto do Arcus (p/ 2 pessoas)
+  // Regra do gestor: 50% da diária de 2 quartos do Arcus = 0.5 * (2 * diária de 1 quarto).
+  const arcusTarget = arcusPerNight != null ? arcusPerNight : null;
+  const arcusTwoRooms = arcusPerNight != null ? arcusPerNight * 2 : null;
 
   const mineRows = rows.filter((r) => r.listing.role === 'mine');
   const minePerNight = mineRows.find((r) => r.perNight != null)?.perNight ?? null;
@@ -101,6 +103,7 @@ export const buildMarketSnapshot = (win) => {
       favTotal: rows.filter((r) => r.listing.role === 'favorite').length,
       arcusPerNight,
       arcusTarget,
+      arcusTwoRooms,
       minePerNight,
       mineAvailable: mineRows.some((r) => r.status === 'ok'),
       mineTracked: mineRows.length > 0

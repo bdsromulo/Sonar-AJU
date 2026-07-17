@@ -119,9 +119,9 @@ export default function Simulador() {
           icon={Target}
           tone="bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
           title="Meta Arcus (50%)"
-          subtitle={stats.arcusPerNight != null ? `Arcus: ${fmtBRL(stats.arcusPerNight)}/noite` : 'sem observação do Arcus'}
+          subtitle={stats.arcusPerNight != null ? `Arcus: ${fmtBRL(stats.arcusPerNight)}/quarto · 2 qts ${fmtBRL(stats.arcusTwoRooms)}` : 'sem observação do Arcus'}
           value={fmtBRL(stats.arcusTarget)}
-          foot="⚠ interpretação de '2 quartos' a confirmar"
+          foot="50% da diária de 2 quartos do Arcus"
         />
         <KpiCard
           icon={Home}
