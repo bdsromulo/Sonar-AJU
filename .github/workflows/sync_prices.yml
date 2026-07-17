@@ -1,13 +1,14 @@
-name: 🤖 Sonar Caju - 1-Click & Cron Price Sync Robot
+name: Sonar Caju - Price Sync Robot (DESATIVADO)
+
+# ⚠️ DESATIVADO em jul/2026. Este robô (scripts/sync_prices.py) é uma SIMULAÇÃO:
+# gera preços aleatórios, não coleta nada real, e o cron diário estava poluindo o
+# repositório com dados falsos (competitors.json) commitados como "Sonar Caju Bot".
+# A coleta real agora é o coletor local Playwright (scripts/coletor/). Este workflow
+# só roda por acionamento manual explícito; o gatilho agendado foi removido.
+# TODO: remover de vez junto com o front v1 (competitors.json / dataService).
 
 on:
-  schedule:
-    # Executa automaticamente toda madrugada às 04:00 BRT (07:00 UTC)
-    - cron: '0 7 * * *'
   workflow_dispatch:
-    # Permite ser disparado com 1 clique pelo botão na interface do Sonar Caju ou via API REST
-  repository_dispatch:
-    types: [sync-prices]
 
 jobs:
   sync_and_update:
