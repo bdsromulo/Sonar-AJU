@@ -1,20 +1,22 @@
 import React, { useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { fmtBRL, daysAgo } from '../services/marketData';
+import { fmtBRL } from '../services/marketData';
 
 const ATALAIA = [-10.9887, -37.0487];
 
-// Cor do pino conforme posição do imóvel vs. média da orla no período.
-function markerStyle(row, orlaAvg) {
-  if (row.listing.role === 'mine') return { color: '#22d3ee', fill: '#22d3ee', r: 11 };
-  if (row.listing.role === 'benchmark') return { color: '#a855f7', fill: '#a855f7', r: 10 };
-  if (row.status !== 'ok') return { color: '#475569', fill: '#1e293b', r: 6 };
-  if (orlaAvg == null) return { color: '#64748b', fill: '#334155', r: 7 };
-  const diff = (row.perNight - orlaAvg) / orlaAvg;
-  if (diff < -0.1) return { color: '#10b981', fill: '#10b981', r: 8 };
-  if (diff > 0.1) return { color: '#f43f5e', fill: '#f43f5e', r: 8 };
-  return { color: '#f59e0b', fill: '#f59e0b', r: 8 };
+// Cor do pino conforme posição do imóvel vs. mediana da orla para a consulta.
+function markerStyle(row, orlaMedian) {
+  if (row.listing.role === 'mine') return { color: '#22d3ee', fill: '#22d3ee', r: 11, op: 0.85 };
+  if (row.listing.role === 'benchmark') return { color: '#a855f7', fill: '#a855f7', r: 10, op: 0.85 };
+  if (row.perNight == null) return { color: '#475569', fill: '#1e293b', r: 6, op: 0.5 };
+  // Fora dos comparáveis (não cabe / não aceita pet): apagado, mesmo tendo preço.
+  if (!row.comparable) return { color: '#64748b', fill: '#334155', r: 6, op: 0.5 };
+  if (orlaMedian == null) return { color: '#64748b', fill: '#334155', r: 7, op: 0.75 };
+  const diff = (row.perNight - orlaMedian) / orlaMedian;
+  if (diff < -0.1) return { color: '#10b981', fill: '#10b981', r: 8, op: 0.8 };
+  if (diff > 0.1) return { color: '#f43f5e', fill: '#f43f5e', r: 8, op: 0.8 };
+  return { color: '#f59e0b', fill: '#f59e0b', r: 8, op: 0.8 };
 }
 
 function Recenter({ center }) {
@@ -25,7 +27,7 @@ function Recenter({ center }) {
 
 export default function MarketMap({ snapshot, focusCenter }) {
   const rows = snapshot?.rows ?? [];
-  const orlaAvg = snapshot?.stats?.orlaAvg ?? null;
+  const orlaMedian = snapshot?.stats?.orlaMedian ?? null;
 
   return (
     <div className="rounded-2xl overflow-hidden border border-slate-800 h-[520px]">
@@ -38,31 +40,38 @@ export default function MarketMap({ snapshot, focusCenter }) {
         {rows.map((row) => {
           const { lat, lng } = row.listing.location;
           if (lat == null || lng == null) return null;
-          const s = markerStyle(row, orlaAvg);
-          const dias = daysAgo(row.collectedAt);
+          const s = markerStyle(row, orlaMedian);
+          const est = row.est;
           return (
             <CircleMarker
               key={row.listing.id}
               center={[lat, lng]}
               radius={s.r}
-              pathOptions={{ color: s.color, fillColor: s.fill, fillOpacity: 0.75, weight: 2 }}
+              pathOptions={{ color: s.color, fillColor: s.fill, fillOpacity: s.op, weight: 2 }}
             >
               <Tooltip direction="top" offset={[0, -4]} opacity={1}>
                 <div style={{ fontSize: 12, lineHeight: 1.4 }}>
                   <strong>{row.listing.name.slice(0, 46)}</strong>
                   <br />
-                  {row.status === 'ok' ? (
+                  {row.perNight != null ? (
                     <>
                       <b>{fmtBRL(row.perNight)}</b>/noite
-                      <br />
-                      total {fmtBRL(row.total)}
+                      {row.estTotal != null && <> · total {fmtBRL(row.estTotal)}</>}
+                      {!row.comparable && (
+                        <><br /><span style={{ color: '#f59e0b' }}>
+                          {row.fitsGuests === false ? `cabe ${row.cap ?? '?'} hóspedes` : 'não aceita pet'}
+                        </span></>
+                      )}
                     </>
-                  ) : row.status === 'indisponivel' ? (
-                    <span style={{ color: '#f59e0b' }}>sem disponibilidade</span>
                   ) : (
-                    <span style={{ color: '#94a3b8' }}>sem observação neste período</span>
+                    <span style={{ color: '#94a3b8' }}>sem observação de preço</span>
                   )}
-                  {dias != null && <><br /><span style={{ color: '#94a3b8' }}>coletado há {dias}d</span></>}
+                  {est && (
+                    <><br /><span style={{ color: '#94a3b8' }}>
+                      {est.daysApart === 0 ? 'coleta desta data' : `coleta ~${est.daysApart}d da data`}
+                      {est.daysAgo != null ? ` · há ${est.daysAgo}d` : ''}
+                    </span></>
+                  )}
                 </div>
               </Tooltip>
             </CircleMarker>

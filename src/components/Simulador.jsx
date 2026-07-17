@@ -1,22 +1,42 @@
-import React, { useMemo, useState } from 'react';
-import { Calendar, Users, TrendingUp, Target, Home, MapPin, Clock, AlertTriangle } from 'lucide-react';
+import React, { useMemo, useState, useEffect } from 'react';
+import {
+  Calendar, Users, Target, Home, TrendingUp, Clock, AlertTriangle,
+  SlidersHorizontal, RotateCcw, Minus, Plus
+} from 'lucide-react';
 import MarketMap from './MarketMap';
 import {
-  getCollectedWindows,
   buildMarketSnapshot,
+  getDefaultQuery,
+  getCollectedWindows,
+  nightsBetween,
   fmtBRL,
-  fmtDateBR,
-  daysAgo
+  fmtBRL0
 } from '../services/marketData';
 
-function FreshnessBadge({ iso }) {
-  const d = daysAgo(iso);
-  if (d == null) return null;
-  const tone = d <= 3 ? 'text-emerald-400' : d <= 10 ? 'text-amber-400' : 'text-rose-400';
+const BASE_OCCUPANCY = 4; // ocupação-base das coletas; hóspedes acima disso = "extra"
+
+function Stepper({ value, onChange, min = 1, max = 16, label, icon: Icon }) {
   return (
-    <span className={`inline-flex items-center gap-1 text-[11px] ${tone}`}>
-      <Clock className="w-3 h-3" /> há {d}d
-    </span>
+    <div>
+      <span className="text-[11px] text-slate-400 flex items-center gap-1 mb-1">
+        {Icon && <Icon className="w-3.5 h-3.5" />} {label}
+      </span>
+      <div className="flex items-center rounded-lg bg-slate-950 border border-slate-800">
+        <button
+          onClick={() => onChange(Math.max(min, value - 1))}
+          className="px-2.5 py-2 text-slate-400 hover:text-white"
+        >
+          <Minus className="w-3.5 h-3.5" />
+        </button>
+        <span className="flex-1 text-center text-sm font-bold text-slate-100">{value}</span>
+        <button
+          onClick={() => onChange(Math.min(max, value + 1))}
+          className="px-2.5 py-2 text-slate-400 hover:text-white"
+        >
+          <Plus className="w-3.5 h-3.5" />
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -38,173 +58,323 @@ function KpiCard({ icon: Icon, tone, title, subtitle, value, foot }) {
   );
 }
 
+function Slider({ label, value, onChange, min, max, step, format }) {
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-1">
+        <span className="text-[11px] text-slate-400">{label}</span>
+        <span className="text-xs font-bold text-cyan-300">{format(value)}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full accent-cyan-500"
+      />
+    </div>
+  );
+}
+
 export default function Simulador() {
-  const windows = useMemo(() => getCollectedWindows(), []);
-  const [winKey, setWinKey] = useState(windows[0]?.key ?? null);
+  const [query, setQuery] = useState(getDefaultQuery);
   const [focusCenter, setFocusCenter] = useState(null);
 
-  const win = windows.find((w) => w.key === winKey) ?? windows[0] ?? null;
-  const snapshot = useMemo(() => (win ? buildMarketSnapshot(win) : null), [win]);
+  // Sliders do "seu preço"
+  const [dailyBase, setDailyBase] = useState(null); // ancorado na mediana no 1º load
+  const [longDisc, setLongDisc] = useState(10); // % máx p/ estadia longa
+  const [extraGuestFee, setExtraGuestFee] = useState(40); // R$/noite por hóspede extra
 
-  if (!snapshot) {
-    return (
-      <div className="max-w-2xl mx-auto bg-slate-900/90 border border-slate-800 rounded-2xl p-8 text-center">
-        <MapPin className="w-8 h-8 text-slate-600 mx-auto mb-3" />
-        <h2 className="text-lg font-bold text-white">Ainda não há observações de preço</h2>
-        <p className="text-sm text-slate-400 mt-2">
-          Use a aba <strong>Coletor</strong> para registrar preços de concorrentes por data. Assim que
-          houver dados, o simulador mostra o mercado por período aqui.
-        </p>
-      </div>
-    );
-  }
+  const windows = useMemo(() => getCollectedWindows(), []);
+  const nights = nightsBetween(query.checkin, query.checkout);
+  const snapshot = useMemo(
+    () => (nights ? buildMarketSnapshot(query) : null),
+    [query, nights]
+  );
+  const orlaMedian = snapshot?.stats?.orlaMedian ?? null;
 
-  const { stats } = snapshot;
-  const priced = snapshot.rows
-    .filter((r) => r.status === 'ok')
+  // Ancora a diária base na mediana da orla quando ela existir e o usuário ainda não mexeu.
+  useEffect(() => {
+    if (dailyBase == null && orlaMedian != null) setDailyBase(Math.round(orlaMedian));
+  }, [orlaMedian, dailyBase]);
+
+  const setQ = (patch) => setQuery((q) => ({ ...q, ...patch }));
+
+  // Cálculo do "seu preço" (por imóvel; sliders são premissas explícitas do gestor)
+  const pricing = useMemo(() => {
+    if (dailyBase == null || !nights) return null;
+    const extraNights = Math.max(0, nights - 3);
+    const progress = Math.min(1, extraNights / 4); // desconto progressivo até 7 noites
+    const discount = (longDisc / 100) * progress;
+    const nightlyAfterDisc = dailyBase * (1 - discount);
+    const extraGuests = Math.max(0, query.guests - BASE_OCCUPANCY);
+    const guestPerNight = extraGuests * extraGuestFee;
+    const nightlyEffective = nightlyAfterDisc + guestPerNight;
+    return {
+      discountPct: discount * 100,
+      extraGuests,
+      guestPerNight,
+      nightlyEffective,
+      total: nightlyEffective * nights,
+      vsOrla: orlaMedian ? (nightlyEffective - orlaMedian) / orlaMedian : null,
+      vsArcus: snapshot?.stats?.arcusTarget
+        ? (nightlyEffective - snapshot.stats.arcusTarget) / snapshot.stats.arcusTarget
+        : null
+    };
+  }, [dailyBase, longDisc, extraGuestFee, nights, query.guests, orlaMedian, snapshot]);
+
+  const rowsComparable = (snapshot?.rows ?? [])
+    .filter((r) => r.comparable && r.perNight != null)
     .sort((a, b) => a.perNight - b.perNight);
-  const unavailable = snapshot.rows.filter((r) => r.status === 'indisponivel');
-  const noData = snapshot.rows.filter((r) => r.status === 'sem-dado' && r.listing.role !== 'candidate');
+  const rowsExcluded = (snapshot?.rows ?? []).filter((r) => !r.comparable && r.perNight != null);
 
-  const minePos =
-    stats.minePerNight != null && stats.orlaAvg != null
-      ? ((stats.minePerNight - stats.orlaAvg) / stats.orlaAvg) * 100
-      : null;
+  const { stats } = snapshot ?? { stats: {} };
+  const today = new Date().toISOString().slice(0, 10);
 
   return (
     <div className="space-y-5 animate-fadeIn">
-      {/* Seletor de período (horizonte = janelas já coletadas) */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4">
-        <div className="flex items-center gap-2 mb-3">
+      {/* Consulta: calendário + hóspedes + pet */}
+      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-4">
           <Calendar className="w-4 h-4 text-cyan-400" />
-          <span className="text-sm font-bold text-slate-200">Período consultado</span>
-          <span className="text-[11px] text-slate-500">
-            (horizonte = {windows.length} janela{windows.length > 1 ? 's' : ''} já coletada{windows.length > 1 ? 's' : ''})
-          </span>
+          <span className="text-sm font-bold text-slate-200">Simular precificação</span>
+          <span className="text-[11px] text-slate-500">as mesmas variáveis que um hóspede escolhe</span>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {windows.map((w) => {
-            const active = w.key === win.key;
-            return (
-              <button
-                key={w.key}
-                onClick={() => setWinKey(w.key)}
-                className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all ${
-                  active
-                    ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40'
-                    : 'bg-slate-950/60 text-slate-400 border-slate-800 hover:border-slate-700'
-                }`}
-              >
-                {fmtDateBR(w.checkin)} → {fmtDateBR(w.checkout)}
-                <span className="block text-[10px] font-normal opacity-70">
-                  {w.nights} noites · {w.adults ?? '?'} adultos · {w.availableCount}/{w.listingCount} com preço
-                </span>
-              </button>
-            );
-          })}
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 items-end">
+          <label className="text-[11px] text-slate-400">
+            Check-in
+            <input
+              type="date"
+              value={query.checkin}
+              min={today}
+              onChange={(e) => setQ({ checkin: e.target.value })}
+              className="mt-1 w-full rounded-lg bg-slate-950 border border-slate-800 p-2 text-sm text-slate-100 focus:border-cyan-500/60 focus:outline-none [color-scheme:dark]"
+            />
+          </label>
+          <label className="text-[11px] text-slate-400">
+            Check-out
+            <input
+              type="date"
+              value={query.checkout}
+              min={query.checkin}
+              onChange={(e) => setQ({ checkout: e.target.value })}
+              className="mt-1 w-full rounded-lg bg-slate-950 border border-slate-800 p-2 text-sm text-slate-100 focus:border-cyan-500/60 focus:outline-none [color-scheme:dark]"
+            />
+          </label>
+          <Stepper value={query.guests} onChange={(v) => setQ({ guests: v })} label="Hóspedes" icon={Users} />
+          <div>
+            <span className="text-[11px] text-slate-400 block mb-1">Pet</span>
+            <button
+              onClick={() => setQ({ pet: !query.pet })}
+              className={`w-full rounded-lg border p-2 text-sm font-semibold transition-all ${
+                query.pet
+                  ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40'
+                  : 'bg-slate-950 text-slate-400 border-slate-800'
+              }`}
+            >
+              🐾 {query.pet ? 'Com pet' : 'Sem pet'}
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* KPIs do período */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <KpiCard
-          icon={TrendingUp}
-          tone="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-          title="Média da Orla"
-          subtitle={`${stats.orlaCount}/${stats.favTotal} favoritos com preço`}
-          value={`${fmtBRL(stats.orlaAvg)}`}
-          foot="por noite · custo total ÷ noites"
-        />
-        <KpiCard
-          icon={Target}
-          tone="bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
-          title="Meta Arcus (50%)"
-          subtitle={stats.arcusPerNight != null ? `Arcus: ${fmtBRL(stats.arcusPerNight)}/quarto · 2 qts ${fmtBRL(stats.arcusTwoRooms)}` : 'sem observação do Arcus'}
-          value={fmtBRL(stats.arcusTarget)}
-          foot="50% da diária de 2 quartos do Arcus"
-        />
-        <KpiCard
-          icon={Home}
-          tone="bg-slate-500/15 text-slate-300 border border-slate-500/30"
-          title="Sua hospedagem"
-          subtitle={stats.mineTracked ? 'apê do seu pai' : 'não cadastrada'}
-          value={stats.minePerNight != null ? fmtBRL(stats.minePerNight) : '—'}
-          foot={
-            stats.minePerNight != null
-              ? minePos != null
-                ? `${minePos > 0 ? '+' : ''}${minePos.toFixed(0)}% vs. média da orla`
-                : null
-              : stats.mineTracked
-                ? 'sem disponibilidade/preço neste período'
-                : null
-          }
-        />
-      </div>
-
-      {/* Mapa + lista */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="lg:col-span-2">
-          <MarketMap snapshot={snapshot} focusCenter={focusCenter} />
-        </div>
-        <div className="lg:col-span-1 space-y-2 max-h-[520px] overflow-y-auto custom-scrollbar pr-1">
-          {priced.map((r) => {
-            const pos =
-              stats.orlaAvg != null ? (r.perNight - stats.orlaAvg) / stats.orlaAvg : 0;
-            const tone =
-              r.listing.role === 'mine'
-                ? 'border-cyan-500/40'
-                : r.listing.role === 'benchmark'
-                  ? 'border-purple-500/40'
-                  : pos < -0.1
-                    ? 'border-emerald-500/30'
-                    : pos > 0.1
-                      ? 'border-rose-500/30'
-                      : 'border-amber-500/30';
-            return (
-              <button
-                key={r.listing.id}
-                onClick={() => setFocusCenter([r.listing.location.lat, r.listing.location.lng])}
-                className={`w-full text-left rounded-xl border ${tone} bg-slate-950/70 p-3 hover:bg-slate-900 transition-all`}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs font-bold text-slate-200 truncate">
-                    {r.listing.name}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-wide text-slate-500 flex-shrink-0">
-                    {r.listing.platform}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between mt-1">
-                  <span className="text-sm font-extrabold text-white">{fmtBRL(r.perNight)}<span className="text-[11px] font-normal text-slate-400">/noite</span></span>
-                  <FreshnessBadge iso={r.collectedAt} />
-                </div>
-              </button>
-            );
-          })}
-
-          {unavailable.length > 0 && (
-            <div className="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
-              <div className="text-[11px] font-bold text-amber-400 flex items-center gap-1 mb-1">
-                <AlertTriangle className="w-3 h-3" /> Sem disponibilidade ({unavailable.length})
-              </div>
-              <div className="text-[11px] text-slate-400 leading-relaxed">
-                {unavailable.map((r) => r.listing.name.split(' ').slice(0, 4).join(' ')).join(' · ')}
-              </div>
-            </div>
-          )}
-
-          {noData.length > 0 && (
-            <div className="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
-              <div className="text-[11px] font-bold text-slate-400 mb-1">
-                Sem coleta neste período ({noData.length})
-              </div>
-              <div className="text-[11px] text-slate-500 leading-relaxed">
-                Colete estes no Coletor para completar o mapa deste período.
-              </div>
+        <div className="flex items-center justify-between mt-3">
+          <div className="text-[11px] text-slate-500">
+            {nights ? `${nights} noite${nights > 1 ? 's' : ''}` : 'check-out deve ser após o check-in'}
+            {query.pet && ' · filtrando quem aceita pet'}
+            {query.guests > BASE_OCCUPANCY && ` · quem cabe ≥ ${query.guests}`}
+          </div>
+          {windows.length > 0 && (
+            <div className="hidden md:flex items-center gap-1.5">
+              <span className="text-[10px] text-slate-500">datas com boa coleta:</span>
+              {windows.slice().sort((a, b) => b.priced - a.priced).slice(0, 3).map((w) => (
+                <button
+                  key={w.checkin}
+                  onClick={() => setQ({ checkin: w.checkin, checkout: w.checkout })}
+                  className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 hover:border-cyan-500/40"
+                >
+                  {w.checkin.slice(8)}/{w.checkin.slice(5, 7)}
+                </button>
+              ))}
             </div>
           )}
         </div>
       </div>
+
+      {!snapshot ? (
+        <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 text-center text-slate-400 text-sm">
+          Escolha um check-out após o check-in para ver o mercado.
+        </div>
+      ) : (
+        <>
+          {/* KPIs */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <KpiCard
+              icon={TrendingUp}
+              tone="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+              title="Mediana da Orla"
+              subtitle={`${stats.orlaCount} comparáveis (cabem ${query.guests}${query.pet ? ' + pet' : ''})`}
+              value={fmtBRL(stats.orlaMedian)}
+              foot="por noite · concorrentes que servem a mesma consulta"
+            />
+            <KpiCard
+              icon={Target}
+              tone="bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+              title="Meta Arcus (50%)"
+              subtitle={stats.arcusPerNight != null ? `Arcus ${fmtBRL0(stats.arcusPerNight)}/quarto · 2 qts ${fmtBRL0(stats.arcusTwoRooms)}` : 'sem coleta do Arcus p/ esta data'}
+              value={fmtBRL(stats.arcusTarget)}
+              foot="50% da diária de 2 quartos do Arcus"
+            />
+            <KpiCard
+              icon={Home}
+              tone="bg-slate-500/15 text-slate-300 border border-slate-500/30"
+              title="Sua hospedagem"
+              subtitle={stats.mineTracked ? `capacidade ${stats.mineCapacity ?? '?'}` : 'não cadastrada'}
+              value={stats.minePerNight != null ? fmtBRL(stats.minePerNight) : '—'}
+              foot={stats.minePerNight != null ? 'diária real coletada mais próxima' : 'sem coleta com preço p/ esta data'}
+            />
+          </div>
+
+          {/* Mapa + lista + painel do seu preço */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <div className="lg:col-span-2 space-y-5">
+              <MarketMap snapshot={snapshot} focusCenter={focusCenter} />
+
+              {/* Painel: Seu preço (sliders) */}
+              <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <SlidersHorizontal className="w-4 h-4 text-cyan-400" />
+                    <span className="text-sm font-bold text-slate-200">Seu preço</span>
+                  </div>
+                  <button
+                    onClick={() => setDailyBase(orlaMedian != null ? Math.round(orlaMedian) : dailyBase)}
+                    disabled={orlaMedian == null}
+                    className="text-[11px] flex items-center gap-1 text-slate-400 hover:text-cyan-300 disabled:opacity-40"
+                  >
+                    <RotateCcw className="w-3 h-3" /> ancorar na mediana
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+                  <Slider
+                    label="Diária base"
+                    value={dailyBase ?? 0}
+                    onChange={setDailyBase}
+                    min={100}
+                    max={1500}
+                    step={10}
+                    format={(v) => fmtBRL0(v)}
+                  />
+                  <Slider
+                    label="Desconto estadia longa (máx.)"
+                    value={longDisc}
+                    onChange={setLongDisc}
+                    min={0}
+                    max={30}
+                    step={1}
+                    format={(v) => `${v}%`}
+                  />
+                  <Slider
+                    label={`Taxa/hóspede acima de ${BASE_OCCUPANCY}`}
+                    value={extraGuestFee}
+                    onChange={setExtraGuestFee}
+                    min={0}
+                    max={150}
+                    step={5}
+                    format={(v) => `${fmtBRL0(v)}/noite`}
+                  />
+                </div>
+
+                {pricing && (
+                  <div className="rounded-xl bg-slate-950/70 border border-slate-800 p-4">
+                    <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+                      <div>
+                        <div className="text-[11px] text-slate-400">Sua diária efetiva</div>
+                        <div className="text-2xl font-extrabold text-cyan-300">{fmtBRL(pricing.nightlyEffective)}</div>
+                      </div>
+                      <div>
+                        <div className="text-[11px] text-slate-400">Total {nights} noites</div>
+                        <div className="text-2xl font-extrabold text-white">{fmtBRL(pricing.total)}</div>
+                      </div>
+                      <div className="flex gap-2 ml-auto">
+                        {pricing.vsOrla != null && (
+                          <span className={`text-[11px] font-bold px-2 py-1 rounded-lg ${pricing.vsOrla <= 0 ? 'bg-emerald-500/15 text-emerald-300' : 'bg-amber-500/15 text-amber-300'}`}>
+                            {pricing.vsOrla > 0 ? '+' : ''}{(pricing.vsOrla * 100).toFixed(0)}% vs orla
+                          </span>
+                        )}
+                        {pricing.vsArcus != null && (
+                          <span className={`text-[11px] font-bold px-2 py-1 rounded-lg ${Math.abs(pricing.vsArcus) <= 0.05 ? 'bg-emerald-500/15 text-emerald-300' : 'bg-slate-700/50 text-slate-300'}`}>
+                            {pricing.vsArcus > 0 ? '+' : ''}{(pricing.vsArcus * 100).toFixed(0)}% vs meta Arcus
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex flex-wrap gap-x-4 gap-y-1">
+                      <span>diária base {fmtBRL0(dailyBase)}</span>
+                      {pricing.discountPct > 0 && <span>− {pricing.discountPct.toFixed(0)}% estadia longa</span>}
+                      {pricing.extraGuests > 0 && <span>+ {fmtBRL0(pricing.guestPerNight)}/noite ({pricing.extraGuests} hóspede{pricing.extraGuests > 1 ? 's' : ''} extra)</span>}
+                    </div>
+                    <div className="mt-2 flex items-start gap-1.5 text-[10px] text-slate-500">
+                      <AlertTriangle className="w-3 h-3 mt-0.5 flex-shrink-0" />
+                      Desconto por duração e taxa por hóspede são <b className="text-slate-400">premissas suas</b> (sliders), não medidas na coleta atual.
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Lista de comparáveis */}
+            <div className="lg:col-span-1 space-y-2 max-h-[600px] overflow-y-auto custom-scrollbar pr-1">
+              {rowsComparable.map((r) => {
+                const pos = orlaMedian != null ? (r.perNight - orlaMedian) / orlaMedian : 0;
+                const tone =
+                  r.listing.role === 'mine' ? 'border-cyan-500/40'
+                  : r.listing.role === 'benchmark' ? 'border-purple-500/40'
+                  : pos < -0.1 ? 'border-emerald-500/30'
+                  : pos > 0.1 ? 'border-rose-500/30'
+                  : 'border-amber-500/30';
+                return (
+                  <button
+                    key={r.listing.id}
+                    onClick={() => setFocusCenter([r.listing.location.lat, r.listing.location.lng])}
+                    className={`w-full text-left rounded-xl border ${tone} bg-slate-950/70 p-3 hover:bg-slate-900 transition-all`}
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-xs font-bold text-slate-200 truncate">{r.listing.name}</span>
+                      <span className="text-[10px] uppercase text-slate-500 flex-shrink-0">{r.listing.platform}</span>
+                    </div>
+                    <div className="flex items-center justify-between mt-1">
+                      <span className="text-sm font-extrabold text-white">
+                        {fmtBRL(r.perNight)}<span className="text-[11px] font-normal text-slate-400">/noite</span>
+                      </span>
+                      {r.est && (
+                        <span className="text-[10px] text-slate-500 flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {r.est.daysApart === 0 ? 'nesta data' : `~${r.est.daysApart}d`}
+                        </span>
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+
+              {rowsExcluded.length > 0 && (
+                <div className="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                  <div className="text-[11px] font-bold text-slate-400 mb-1">
+                    Fora dos comparáveis ({rowsExcluded.length})
+                  </div>
+                  <div className="text-[11px] text-slate-500 leading-relaxed">
+                    Não cabem {query.guests} hóspedes{query.pet ? ' ou não aceitam pet' : ''}.
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
