@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radar, RefreshCw, Settings, MapPin, Sparkles, Database } from 'lucide-react';
+import { Radar, RefreshCw, Settings, MapPin, Sparkles, Compass } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, onSyncClick, isSyncing, lastSynced }) {
   return (
@@ -59,6 +59,17 @@ export default function Navbar({ activeTab, setActiveTab, onSyncClick, isSyncing
             >
               <Radar className="w-4 h-4" />
               <span>Painel & Mapa</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('coletor')}
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
+                activeTab === 'coletor'
+                  ? 'bg-slate-800 text-cyan-400 shadow-sm border border-slate-700/60'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <Compass className="w-4 h-4" />
+              <span>Coletor</span>
             </button>
             <button
               onClick={() => setActiveTab('admin')}

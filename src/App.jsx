@@ -5,6 +5,7 @@ import CalendarFilter from './components/CalendarFilter';
 import InteractiveMap from './components/InteractiveMap';
 import CompetitorsList from './components/CompetitorsList';
 import AdminPanel from './components/AdminPanel';
+import ColetorPanel from './components/ColetorPanel';
 import BookmarkletModal from './components/BookmarkletModal';
 import { getCompetitors, saveCompetitors, getSettings, calculatePeriodPrice } from './services/dataService';
 import { commitCompetitorsToGitHub } from './services/githubService';
@@ -148,6 +149,10 @@ export default function App() {
 
             </div>
 
+          </div>
+        ) : activeTab === 'coletor' ? (
+          <div className="animate-fadeIn">
+            <ColetorPanel settings={settings} />
           </div>
         ) : (
           <div className="animate-fadeIn">
