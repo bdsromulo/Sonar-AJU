@@ -135,6 +135,12 @@ export default function Simulador() {
   const { stats } = snapshot ?? { stats: {} };
   const today = new Date().toISOString().slice(0, 10);
 
+  // Disponibilidade EXATA (calendário) para as datas escolhidas.
+  const calRows = (snapshot?.rows ?? []).filter((r) => r.avail);
+  const calAvail = calRows.filter((r) => r.avail.available === true).length;
+  const calBlocked = calRows.filter((r) => r.avail.available === false).length;
+  const calMinFail = calRows.filter((r) => r.avail.available !== false && r.avail.meetsMin === false).length;
+
   return (
     <div className="space-y-5 animate-fadeIn">
       {/* Consulta: calendário + hóspedes + pet */}
@@ -237,6 +243,13 @@ export default function Simulador() {
             {query.pet && ' · aceita pet'}
             {query.guests > BASE_OCCUPANCY && ` · cabe ≥ ${query.guests}`}
             {filters.poolOnly && ' · com piscina'}
+            {calRows.length > 0 && (
+              <span className="text-slate-400">
+                {' · '}📅 nestas datas (Airbnb): <b className="text-emerald-400">{calAvail} livres</b>
+                {calBlocked > 0 && <>, <b className="text-rose-400">{calBlocked} lotados</b></>}
+                {calMinFail > 0 && <>, {calMinFail} abaixo da estadia mín.</>}
+              </span>
+            )}
           </div>
           {windows.length > 0 && (
             <div className="hidden md:flex items-center gap-1.5">

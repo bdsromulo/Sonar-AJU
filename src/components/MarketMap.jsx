@@ -59,12 +59,17 @@ export default function MarketMap({ snapshot, focusCenter }) {
                       {row.estTotal != null && <> · total {fmtBRL(row.estTotal)}</>}
                       {!row.comparable && (
                         <><br /><span style={{ color: '#f59e0b' }}>
-                          {row.fitsGuests === false ? `cabe ${row.cap ?? '?'} hóspedes`
+                          {row.fitsAvail === false
+                            ? (row.avail?.available === false ? 'indisponível nas datas' : `mín. ${row.avail?.minNights} noites`)
+                            : row.fitsGuests === false ? `cabe ${row.cap ?? '?'} hóspedes`
                             : row.fitsPet === false ? 'não aceita pet'
                             : row.fitsPool === false ? 'sem piscina'
                             : row.fitsKind === false ? (row.cls?.kind === 'hotel' ? 'é hotel' : 'é residencial')
                             : 'fora do filtro'}
                         </span></>
+                      )}
+                      {row.comparable && row.avail?.available === true && (
+                        <><br /><span style={{ color: '#10b981' }}>✓ disponível nas datas</span></>
                       )}
                     </>
                   ) : (

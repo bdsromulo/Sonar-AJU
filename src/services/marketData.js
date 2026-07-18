@@ -4,9 +4,38 @@
 // pessoa): hóspedes/pet filtram os comparáveis; a diária é da unidade.
 import listings from '../../data/listings.json';
 import observations from '../../data/observations.json';
+import availability from '../../data/availability.json';
 
 export const getListings = () => listings;
 export const getObservations = () => observations;
+
+// Disponibilidade EXATA (calendário Airbnb) para o intervalo consultado.
+// Retorna { available, minNights, meetsMin, collectedAt } ou null se sem calendário.
+export const exactAvailability = (listingId, checkin, checkout) => {
+  const cal = availability[listingId];
+  if (!cal || !checkin || !checkout) return null;
+  const start = new Date(`${checkin}T12:00`);
+  const end = new Date(`${checkout}T12:00`);
+  const nights = Math.round((end - start) / 864e5);
+  if (nights <= 0) return null;
+  let allAvail = true;
+  let checkinMin = null;
+  for (let i = 0; i < nights; i++) {
+    const d = new Date(start);
+    d.setDate(d.getDate() + i);
+    const key = d.toISOString().slice(0, 10);
+    const rec = cal.days[key];
+    if (!rec) { allAvail = null; continue; } // fora do horizonte do calendário
+    if (i === 0) checkinMin = rec[1];
+    if (rec[0] !== 1) allAvail = false;
+  }
+  return {
+    available: allAvail,
+    minNights: checkinMin,
+    meetsMin: checkinMin == null ? null : nights >= checkinMin,
+    collectedAt: cal.collectedAt
+  };
+};
 
 export const nightsBetween = (checkin, checkout) => {
   if (!checkin || !checkout) return null;
@@ -86,12 +115,17 @@ export const buildMarketSnapshot = (query) => {
       const fitsKind = !f.kind || f.kind === 'all' ? true : cls.kind ? cls.kind === f.kind : null;
       const fitsStars =
         !f.minStars || cls.kind !== 'hotel' ? true : cls.stars != null ? cls.stars >= f.minStars : null;
+      // Disponibilidade exata (calendário Airbnb) para as datas da consulta.
+      const avail = exactAvailability(l.id, query.checkin, query.checkout);
+      const fitsAvail = !avail ? null : avail.available === false || avail.meetsMin === false ? false : true;
       const comparable =
-        fitsGuests !== false && fitsPet !== false && fitsPool !== false && fitsKind !== false && fitsStars !== false;
+        fitsGuests !== false && fitsPet !== false && fitsPool !== false &&
+        fitsKind !== false && fitsStars !== false && fitsAvail !== false;
       const perNight = est?.perNight ?? null;
       return {
         listing: l,
         est,
+        avail,
         perNight,
         estTotal: perNight != null && nights ? perNight * nights : null,
         cap,
@@ -100,6 +134,7 @@ export const buildMarketSnapshot = (query) => {
         fitsPet,
         fitsPool,
         fitsKind,
+        fitsAvail,
         comparable,
         status: perNight != null ? 'ok' : 'sem-dado'
       };
