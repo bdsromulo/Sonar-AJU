@@ -105,6 +105,11 @@ export const buildMarketSnapshot = (query) => {
   const rows = listings
     .filter((l) => l.active)
     .map((l) => {
+      // Observação EXATA do intervalo consultado (preço real ou indisponível confirmado).
+      const exactObs = observations.find(
+        (o) => o.listingId === l.id && o.query?.checkin === query.checkin && o.query?.checkout === query.checkout
+      );
+      const exactUnavail = exactObs?.available === false;
       const est = estimateRateForDate(l, query.checkin);
       const cap = caps.get(l.id);
       const cls = l.classification || {};
@@ -124,12 +129,20 @@ export const buildMarketSnapshot = (query) => {
       const fitsAvail = !avail ? null : avail.available === false || avail.meetsMin === false ? false : true;
       const comparable =
         fitsGuests !== false && fitsPet !== false && fitsPool !== false &&
-        fitsKind !== false && fitsStars !== false && fitsAvail !== false;
-      const perNight = est?.perNight ?? null;
+        fitsKind !== false && fitsStars !== false && fitsAvail !== false && !exactUnavail;
+      // Preço: prioriza a observação EXATA da data (se com preço); senão a estimativa.
+      const exactPerNight =
+        exactObs?.available !== false && exactObs?.price?.total != null && nights
+          ? exactObs.price.total / nights
+          : null;
+      const isExactPrice = exactPerNight != null;
+      const perNight = isExactPrice ? exactPerNight : est?.perNight ?? null;
       return {
         listing: l,
         est,
         avail,
+        exactUnavail,
+        isExactPrice,
         perNight,
         estTotal: perNight != null && nights ? perNight * nights : null,
         cap,

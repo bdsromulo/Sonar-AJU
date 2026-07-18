@@ -419,12 +419,10 @@ export default function Simulador() {
                       <span className="text-sm font-extrabold text-white">
                         {fmtBRL(r.perNight)}<span className="text-[11px] font-normal text-slate-400">/noite</span>
                       </span>
-                      {r.est && (
-                        <span className="text-[10px] text-slate-500 flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {r.est.daysApart === 0 ? 'nesta data' : `~${r.est.daysApart}d`}
-                        </span>
-                      )}
+                      <span className={`text-[10px] flex items-center gap-1 ${r.isExactPrice ? 'text-emerald-400' : 'text-slate-500'}`}>
+                        <Clock className="w-3 h-3" />
+                        {r.isExactPrice ? 'exato' : r.est ? `~${r.est.daysApart}d` : ''}
+                      </span>
                     </div>
                   </button>
                 );

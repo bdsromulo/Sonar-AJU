@@ -59,7 +59,8 @@ export default function MarketMap({ snapshot, focusCenter }) {
                       {row.estTotal != null && <> · total {fmtBRL(row.estTotal)}</>}
                       {!row.comparable && (
                         <><br /><span style={{ color: '#f59e0b' }}>
-                          {row.fitsAvail === false
+                          {row.exactUnavail ? 'indisponível nas datas'
+                            : row.fitsAvail === false
                             ? (row.avail?.available === false ? 'indisponível nas datas' : `mín. ${row.avail?.minNights} noites`)
                             : row.fitsGuests === false ? `cabe ${row.cap ?? '?'} hóspedes`
                             : row.fitsPet === false ? 'não aceita pet'
@@ -75,10 +76,10 @@ export default function MarketMap({ snapshot, focusCenter }) {
                   ) : (
                     <span style={{ color: '#94a3b8' }}>sem observação de preço</span>
                   )}
-                  {est && (
-                    <><br /><span style={{ color: '#94a3b8' }}>
-                      {est.daysApart === 0 ? 'coleta desta data' : `coleta ~${est.daysApart}d da data`}
-                      {est.daysAgo != null ? ` · há ${est.daysAgo}d` : ''}
+                  {row.perNight != null && (
+                    <><br /><span style={{ color: row.isExactPrice ? '#10b981' : '#94a3b8' }}>
+                      {row.isExactPrice ? 'preço exato destas datas'
+                        : est ? (est.daysApart === 0 ? 'coleta desta data' : `estimado (~${est.daysApart}d da data)`) : ''}
                     </span></>
                   )}
                 </div>
