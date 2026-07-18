@@ -111,7 +111,11 @@ export const buildMarketSnapshot = (query) => {
       const fitsGuests = cap == null ? null : cap >= query.guests;
       const fitsPet = !query.pet ? true : l.petsAllowed === true ? true : l.petsAllowed == null ? null : false;
       // Filtros de classificação (só excluem quando há certeza contrária).
-      const fitsPool = !f.poolOnly ? true : cls.pool === true ? true : cls.pool === false ? false : null;
+      // Piscina em 3 estados: 'any' | 'yes' | 'no'.
+      const fitsPool =
+        !f.pool || f.pool === 'any' ? true
+          : f.pool === 'yes' ? (cls.pool === true ? true : cls.pool === false ? false : null)
+          : /* 'no' */ (cls.pool === false ? true : cls.pool === true ? false : null);
       const fitsKind = !f.kind || f.kind === 'all' ? true : cls.kind ? cls.kind === f.kind : null;
       const fitsStars =
         !f.minStars || cls.kind !== 'hotel' ? true : cls.stars != null ? cls.stars >= f.minStars : null;
@@ -182,7 +186,7 @@ export const getCollectedWindows = () => {
 };
 
 export const getDefaultQuery = () => {
-  const filters = { poolOnly: false, kind: 'all', minStars: 0 };
+  const filters = { pool: 'any', kind: 'all', minStars: 0 };
   const best = getCollectedWindows().slice().sort((a, b) => b.priced - a.priced)[0];
   if (best) return { checkin: best.checkin, checkout: best.checkout, guests: 4, pet: false, filters };
   return { checkin: '2026-08-15', checkout: '2026-08-18', guests: 4, pet: false, filters };

@@ -63,7 +63,7 @@ export default function MarketMap({ snapshot, focusCenter }) {
                             ? (row.avail?.available === false ? 'indisponível nas datas' : `mín. ${row.avail?.minNights} noites`)
                             : row.fitsGuests === false ? `cabe ${row.cap ?? '?'} hóspedes`
                             : row.fitsPet === false ? 'não aceita pet'
-                            : row.fitsPool === false ? 'sem piscina'
+                            : row.fitsPool === false ? (row.cls?.pool === true ? 'tem piscina' : 'sem piscina')
                             : row.fitsKind === false ? (row.cls?.kind === 'hotel' ? 'é hotel' : 'é residencial')
                             : 'fora do filtro'}
                         </span></>

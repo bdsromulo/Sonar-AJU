@@ -208,16 +208,19 @@ export default function Simulador() {
               {o.label}
             </button>
           ))}
-          <button
-            onClick={() => setF({ poolOnly: !filters.poolOnly })}
-            className={`text-[11px] px-2.5 py-1 rounded-full border transition-all ${
-              filters.poolOnly
+          <select
+            value={filters.pool || 'any'}
+            onChange={(e) => setF({ pool: e.target.value })}
+            className={`text-[11px] px-2.5 py-1 rounded-full border transition-all cursor-pointer [color-scheme:dark] ${
+              (filters.pool || 'any') !== 'any'
                 ? 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40'
                 : 'bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700'
             }`}
           >
-            🏊 Só com piscina
-          </button>
+            <option value="any">🏊 Piscina: qualquer</option>
+            <option value="yes">🏊 Com piscina</option>
+            <option value="no">🏊 Sem piscina</option>
+          </select>
           {filters.kind === 'hotel' && (
             <div className="flex items-center gap-1">
               {[0, 3, 4].map((s) => (
@@ -242,7 +245,8 @@ export default function Simulador() {
             {nights ? `${nights} noite${nights > 1 ? 's' : ''}` : 'check-out deve ser após o check-in'}
             {query.pet && ' · aceita pet'}
             {query.guests > BASE_OCCUPANCY && ` · cabe ≥ ${query.guests}`}
-            {filters.poolOnly && ' · com piscina'}
+            {filters.pool === 'yes' && ' · com piscina'}
+            {filters.pool === 'no' && ' · sem piscina'}
             {calRows.length > 0 && (
               <span className="text-slate-400">
                 {' · '}📅 nestas datas (Airbnb): <b className="text-emerald-400">{calAvail} livres</b>
@@ -434,7 +438,7 @@ export default function Simulador() {
                   <div className="text-[11px] text-slate-500 leading-relaxed">
                     Não atendem à consulta ({query.guests} hóspedes
                     {query.pet ? ' + pet' : ''}
-                    {filters.poolOnly ? ' + piscina' : ''}
+                    {filters.pool === 'yes' ? ' + com piscina' : filters.pool === 'no' ? ' + sem piscina' : ''}
                     {filters.kind && filters.kind !== 'all' ? ` + ${filters.kind === 'hotel' ? 'hotel' : 'residencial'}` : ''}).
                   </div>
                 </div>

@@ -35,12 +35,19 @@ const HEADFUL = has('--headful');
 const PLATFORM = val('--platform', null); // 'airbnb' | 'booking'
 const LIMIT = val('--limit', null) ? +val('--limit') : null;
 const WINDOWS_ARG = val('--windows', null); // "0-3" ou "2"
+const RANGE = val('--range', null);         // "2026-12-28:2027-01-02" (intervalo avulso exato)
+const ADULTS = val('--adults', null) ? +val('--adults') : 4;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const jitter = (a, b) => a + Math.random() * (b - a);
 
 function selectWindows() {
-  let w = generateWindows({ months: 6, stepDays: 14, nights: 3, adults: 4 });
+  // Intervalo avulso exato (ex.: Réveillon): --range checkin:checkout
+  if (RANGE) {
+    const [checkin, checkout] = RANGE.split(':');
+    return [{ checkin, checkout, adults: ADULTS, children: 0, infants: 0, pets: 0, rooms: 1 }];
+  }
+  let w = generateWindows({ months: 6, stepDays: 14, nights: 3, adults: ADULTS });
   if (WINDOWS_ARG) {
     const [a, b] = WINDOWS_ARG.split('-').map(Number);
     w = w.slice(a, (Number.isNaN(b) ? a : b) + 1);

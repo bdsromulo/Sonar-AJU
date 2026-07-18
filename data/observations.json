@@ -15611,5 +15611,908 @@
       ],
       "taxesIncluded": true
     }
+  },
+  {
+    "id": "obs-mrqax54s-8haa",
+    "listingId": "abnb-897222574330189303",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:46:36.221Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqaxh27-3ypk",
+    "listingId": "abnb-1348637264576878115",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:46:51.679Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqaxu3n-2he2",
+    "listingId": "abnb-1242659541135555733",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:47:08.579Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqay65n-jqu0",
+    "listingId": "abnb-1080681181203315011",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": true,
+    "price": {
+      "total": 6593,
+      "nightly": null,
+      "cleaning": null,
+      "service": null,
+      "taxes": null,
+      "currency": "BRL"
+    },
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:47:24.203Z",
+    "raw": {
+      "sidebarVals": [
+        6593,
+        6593
+      ]
+    }
+  },
+  {
+    "id": "obs-mrqayibw-kzie",
+    "listingId": "abnb-4900690",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:47:39.980Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqayun7-dxz5",
+    "listingId": "abnb-26059011",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:47:55.939Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqaz7iq-oepf",
+    "listingId": "abnb-1028129449843725009",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:48:12.626Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqazkki-u2pm",
+    "listingId": "abnb-766594546072994857",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:48:29.538Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqaztjg-sn9f",
+    "listingId": "abnb-23612322",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:48:41.164Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb05uu-51gf",
+    "listingId": "abnb-41992976",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:48:57.126Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb0jn8-6pmd",
+    "listingId": "abnb-25147261",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:49:14.996Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb0vrh-o0mr",
+    "listingId": "abnb-570267783429553300",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:49:30.701Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb18xa-ye3b",
+    "listingId": "abnb-53653376",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:49:47.758Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb1kcz-vl7i",
+    "listingId": "abnb-51933886",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:50:02.579Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb1vvn-bq29",
+    "listingId": "abnb-881786144163875566",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:50:17.507Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb2iee-5f1p",
+    "listingId": "abnb-53081862",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:50:46.694Z",
+    "raw": {
+      "sidebarVals": []
+    }
+  },
+  {
+    "id": "obs-mrqb2t6f-eton",
+    "listingId": "abnb-54061607",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:51:00.663Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb361l-gd7r",
+    "listingId": "abnb-25053711",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:51:17.337Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb3iuj-ucx6",
+    "listingId": "abnb-853378311351999452",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": true,
+    "price": {
+      "total": 6802,
+      "nightly": null,
+      "cleaning": null,
+      "service": null,
+      "taxes": null,
+      "currency": "BRL"
+    },
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:51:33.931Z",
+    "raw": {
+      "sidebarVals": [
+        6802,
+        6802
+      ]
+    }
+  },
+  {
+    "id": "obs-mrqb3uev-ugd7",
+    "listingId": "abnb-41969747",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:51:48.919Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb44u2-x6d6",
+    "listingId": "abnb-47253317",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:52:02.426Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb4gp8-7en0",
+    "listingId": "abnb-25086241",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": true,
+    "price": {
+      "total": 3065,
+      "nightly": null,
+      "cleaning": null,
+      "service": null,
+      "taxes": null,
+      "currency": "BRL"
+    },
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:52:17.804Z",
+    "raw": {
+      "sidebarVals": [
+        3065,
+        3065
+      ]
+    }
+  },
+  {
+    "id": "obs-mrqb4tid-7o6k",
+    "listingId": "abnb-12853260",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:52:34.405Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb57pp-vty0",
+    "listingId": "abnb-21745100",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:52:52.813Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb5ku3-gdxp",
+    "listingId": "abnb-550024786948766915",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:53:09.819Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb5uvv-5m5u",
+    "listingId": "abnb-39869439",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:53:22.843Z",
+    "raw": {
+      "reason": "sem-datas-ou-indisponivel"
+    }
+  },
+  {
+    "id": "obs-mrqb6e3j-4opl",
+    "listingId": "bkng-top-3-qt-a-3-qd-da-orla-aracaju",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:53:47.743Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqb6qco-3j0a",
+    "listingId": "bkng-praia-e-mar",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": true,
+    "price": {
+      "total": 2500,
+      "nightly": null,
+      "cleaning": null,
+      "service": null,
+      "taxes": 0,
+      "currency": "BRL"
+    },
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:54:03.624Z",
+    "raw": {
+      "options": [
+        {
+          "room": "Quarto Individual",
+          "maxGuests": 1,
+          "total": 2500
+        },
+        {
+          "room": "Quarto Individual",
+          "maxGuests": 1,
+          "total": 2750
+        },
+        {
+          "room": "Quarto com Cama de Casal ou 2 de Solteiro",
+          "maxGuests": 2,
+          "total": 2900
+        },
+        {
+          "room": "Quarto com Cama de Casal ou 2 de Solteiro",
+          "maxGuests": 2,
+          "total": 3190
+        },
+        {
+          "room": "Quarto Duplo com Vista do Mar",
+          "maxGuests": 1,
+          "total": 3350
+        },
+        {
+          "room": "Quarto Duplo com Vista do Mar",
+          "maxGuests": 2,
+          "total": 3685
+        }
+      ],
+      "taxesIncluded": true
+    }
+  },
+  {
+    "id": "obs-mrqb7300-zxr9",
+    "listingId": "bkng-casa-2-4-para-temporada",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": true,
+    "price": {
+      "total": 6039,
+      "nightly": null,
+      "cleaning": null,
+      "service": null,
+      "taxes": null,
+      "currency": "BRL"
+    },
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:54:20.016Z",
+    "raw": {
+      "options": [
+        {
+          "room": "Casa de 2 Quartos",
+          "maxGuests": 4,
+          "total": 6039
+        }
+      ],
+      "taxesIncluded": false
+    }
+  },
+  {
+    "id": "obs-mrqb7mo5-9ure",
+    "listingId": "bkng-terra-do-sol",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:54:45.509Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqb894q-on4y",
+    "listingId": "bkng-ap-beira-mar-na-orla",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:55:14.618Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqb8vwt-v08k",
+    "listingId": "bkng-ap-espetacular-a-5-minutos-da-praia",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:55:44.141Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqb9j6n-oyic",
+    "listingId": "bkng-apartamento-atalaia-aracaju",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:56:14.303Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqba3br-70lh",
+    "listingId": "bkng-condominio-residencial-santa-cecilia",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:56:40.407Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbar7m-e99r",
+    "listingId": "bkng-apartamento-pertinho-da-praia-aracaju",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:57:11.362Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbba77-nt45",
+    "listingId": "bkng-apartamento-novo-3-47-4-bem-aconchegante-na-farolandia-todos-os-quartos-com-ar-c",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": null,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:57:35.971Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbbwtp-uctk",
+    "listingId": "bkng-apartamento-novo-proximo-ao-shopping-jardins",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:58:05.293Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbck29-uz5c",
+    "listingId": "bkng-atraente-apartamento-na-orla-de-atalaia",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:58:35.409Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbd54m-s7iy",
+    "listingId": "bkng-concept-tower-praia-apart",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:59:02.710Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbdq4w-s43e",
+    "listingId": "bkng-perfeito-apartamento-na-orla-de-atalaia",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": false,
+    "price": null,
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:59:29.936Z",
+    "raw": {}
+  },
+  {
+    "id": "obs-mrqbe4r2-qnfj",
+    "listingId": "bkng-comfort-aracaju",
+    "query": {
+      "checkin": "2026-12-28",
+      "checkout": "2027-01-02",
+      "adults": 4,
+      "children": 0,
+      "infants": 0,
+      "pets": 0,
+      "rooms": 1
+    },
+    "available": true,
+    "price": {
+      "total": 4974,
+      "nightly": null,
+      "cleaning": null,
+      "service": null,
+      "taxes": 0,
+      "currency": "BRL"
+    },
+    "source": "local-playwright",
+    "collectedAt": "2026-07-18T11:59:48.878Z",
+    "raw": {
+      "options": [
+        {
+          "room": "Quarto Superior com 2 Camas de Solteiro",
+          "maxGuests": 2,
+          "total": 4974
+        },
+        {
+          "room": "Quarto Duplo",
+          "maxGuests": 2,
+          "total": 6209
+        },
+        {
+          "room": "Quarto Deluxe",
+          "maxGuests": 2,
+          "total": 7254
+        }
+      ],
+      "taxesIncluded": true
+    }
   }
 ]
